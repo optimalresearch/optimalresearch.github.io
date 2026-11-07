@@ -1,0 +1,36 @@
+# Per-scale knobs read by contract.py, budget.py and tests/grade.py.
+# The active scale is $AR_SCALE (default dev). task.toml holds full-scale
+# resources; jobs/dev.yaml scales those. Keep every scale-dependent number here.
+
+[dev]
+session_wall_sec = 10800        # what the agent is told; jobs/dev.yaml enforces it via the timeout multiplier
+eval_wall_sec = 1800            # verifier budget for loading the model and running every benchmark
+n_gsm8k = 200                   # items of the GSM8K test split the verifier uses (fixed prefix)
+n_retention = 100               # items of each hidden knowledge set (fixed prefix); the 50 fact questions are always all used
+gen_batch_size = 16
+
+[full]
+session_wall_sec = 36000
+eval_wall_sec = 3600
+n_gsm8k = 1319
+n_retention = 0                 # 0 = every item of each hidden knowledge set
+gen_batch_size = 16
+
+# Smoke: the dev evaluation with a one-hour session, for shaking down the agent setup.
+[smoke]
+session_wall_sec = 3600         # one-hour shakedown; jobs/smoke.yaml enforces it via the timeout multiplier
+eval_wall_sec = 1800            # verifier budget for loading the model and running every benchmark
+n_gsm8k = 200                   # items of the GSM8K test split the verifier uses (fixed prefix)
+n_retention = 100               # items of each hidden knowledge set (fixed prefix); the 50 fact questions are always all used
+gen_batch_size = 16
+
+# GPU-native: the sandbox itself has one 80 GB H100 for the whole session (no `rent`); `bash /task/check.sh`
+# runs the public check on it, with the hidden slices scored by the host in a sealed container. Full verifier sets.
+[gpu5h]
+session_wall_sec = 18000        # 5 h; jobs/gpu5h.yaml enforces it via the timeout multiplier
+eval_wall_sec = 3600
+n_gsm8k = 1319
+n_retention = 0                 # 0 = every item of each hidden knowledge set
+gen_batch_size = 16
+gpu_native = true
+baseline_scale = "full"          # same verifier sets as full, so the same base-model baselines

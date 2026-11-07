@@ -1,0 +1,12 @@
+# Pinned research stack, shared by sandbox and verifier. Chosen 2026-10-27:
+# all MPI-IS GPU nodes run CUDA driver 13.0, so torch's cu130 build works on
+# A100, H100 and B200 (and sm_120 Blackwell workstation cards).
+# Install with the PyTorch index first:
+#   pip install --index-url https://download.pytorch.org/whl/cu130 --extra-index-url https://pypi.org/simple -r requirements.txt
+torch==2.14.1
+transformers==5.21.0
+safetensors==0.8.0
+accelerate==1.15.0
+datasets==5.1.0
+huggingface_hub==2.3.0
+numpy==2.5.4

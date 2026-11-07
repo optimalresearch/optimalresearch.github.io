@@ -1,0 +1,7 @@
+{
+  "source": "HuggingFaceFW/fineweb-edu/sample/10BT/000_00000.parquet",
+  "vocab_size": 8192,
+  "eot": 0,
+  "train_tokens": 252319041,
+  "val_tokens": 7091977
+}

@@ -1,0 +1,5 @@
+# One setting only: the original environment's (4 h on one H200). The training budget and caps are the
+# constants in lmenv/task.py.
+[full]
+session_wall_sec = 14400
+gpu = "one NVIDIA H200 141GB GPU"

@@ -1,0 +1,56 @@
+# Harbor task config for Docker: 4 h, one H200, 16 CPUs, 96 GB.
+schema_version = "1.4"
+
+[metadata]
+capability = "architecture and training research: the best language model under a cap on unique weights with plenty of compute per token (looped / weight-shared models)"
+reference = "a plain transformer without the weight cap, same FLOPs per token, data and training budget, trained at several budgets (tests/build/oracle_ladder.sh); scoring 1.0 means matching its loss after the full 250M tokens; the unmodified starting point scores about 0.34"
+
+[agent]
+timeout_sec = 14400.0
+# Harbor's egress control: during the agent phase only the model APIs are reachable (Claude Code, Codex).
+network_mode = "allowlist"
+allowed_hosts = ["api.anthropic.com", "console.anthropic.com", "platform.claude.com", "claude.ai",
+                 "chatgpt.com", "auth.openai.com", "api.openai.com"]
+
+[environment]
+# Docker builds environment/Dockerfile after prepare_dev_data.py generates the development tokens.
+build_timeout_sec = 1800.0
+gpus = 1
+gpu_types = ["H200"]
+cpus = 16
+memory_mb = 98304
+storage_mb = 204800
+# Starts the episode clock (read by timer.sh) just before the agent starts.
+[environment.healthcheck]
+command = "test -f /tmp/timer_start || { echo 14400 > /tmp/timer_seconds; date +%s > /tmp/timer_start; }"
+interval_sec = 2
+timeout_sec = 5
+start_period_sec = 1
+start_interval_sec = 1
+retries = 3
+
+[environment.env]
+AR_SCALE = "full"
+
+[verifier]
+# Fresh copy of the agent image; tests/ is uploaded into it after the agent is done.
+environment_mode = "separate"
+timeout_sec = 14400.0
+network_mode = "no-network"
+
+[verifier.env]
+AR_SCALE = "full"
+
+# The submission is what gets graded. Snapshots (earlier versions of the method) and run logs are kept for
+# analysis, e.g. retraining snapshots to see how the agent's method improved; model weights are left behind.
+[[artifacts]]
+source = "/workspace/submission"
+exclude = ["__pycache__", "*.pyc"]
+
+[[artifacts]]
+source = "/workspace/snapshots"
+exclude = ["__pycache__", "*.pyc", "*.pt"]
+
+[[artifacts]]
+source = "/workspace/runs"
+exclude = ["__pycache__", "*.pyc", "*.pt", "*.npz", "*.f16", "*.bin"]

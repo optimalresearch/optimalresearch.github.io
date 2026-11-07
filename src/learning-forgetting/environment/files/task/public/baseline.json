@@ -1,0 +1,9 @@
+{
+  "gsm8k": 0.97,
+  "knowledge": 1.0,
+  "_meta": {
+    "base_model": "Qwen3.5-4B",
+    "gen_batch_size": 16,
+    "note": "the base model on the public dev sets, sampled as the verifier samples (gsm8k: the 200 dev items)"
+  }
+}

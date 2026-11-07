@@ -1,0 +1,12 @@
+{
+  "model": {},
+  "train": {
+    "learning_rate": 0.002,
+    "weight_decay": 0.1,
+    "micro_batch": 32,
+    "accumulation": 2,
+    "warmup": 0.05,
+    "compile": true,
+    "log_every": 100
+  }
+}

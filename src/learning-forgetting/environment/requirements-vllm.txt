@@ -1,0 +1,3 @@
+# Verifier-only: GSM8K generation (task/eval/gsm8k_vllm.py). Its own venv at /opt/vllm,
+# because vLLM pins its own torch.
+vllm==0.32.0

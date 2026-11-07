@@ -1,0 +1,36 @@
+# Harbor task config. Numbers here are the FULL scale; jobs/<scale>.yaml scales them down.
+schema_version = "1.4"
+# The submission. Harbor collects it after the agent runs and restores it at the
+# same path inside the verifier. Nothing else crosses over.
+artifacts = ["/workspace/output"]
+
+[metadata]
+capability = "post-training: inject new facts into an LLM with minimal forgetting (learning-forgetting frontier)"
+reference = "the unmodified base model scores 1.0 on each retention benchmark (tests/build/make_baseline.py); the score is learning² × retention, so the base model itself scores 0"
+
+[agent]
+timeout_sec = 36000.0            # 10 h session budget at full scale
+
+[environment]
+# Docker builds environment/Dockerfile when docker_image is unset; the cluster cannot build and passes a
+# prebuilt image instead (HARBOR_IMAGE, see infra/mpi-cluster/). At gpu5h the sandbox owns one H100; at the
+# rental scales it is CPU-only and GPUs come through `rent` (environment/files/task/rent.toml).
+# The verifier needs one 80 GB GPU either way.
+cpus = 8
+memory_mb = 65536
+storage_mb = 204800
+gpus = 1
+gpu_types = ["H100"]
+network_mode = "public"
+build_timeout_sec = 1800.0
+
+[environment.env]
+AR_SCALE = "${AR_SCALE:-dev}"
+
+[verifier]
+# Fresh copy of the agent image; tests/ is uploaded into it after the agent is done.
+environment_mode = "separate"
+timeout_sec = 3600.0
+
+[verifier.env]
+AR_SCALE = "${AR_SCALE:-dev}"

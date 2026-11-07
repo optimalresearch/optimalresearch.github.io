@@ -1,0 +1,30 @@
+# GPU rental: hardware aliases the agent may request via `rent`, and caps per
+# scale. Read by the bridge on the host (enforcement) and shown to the agent via
+# `rent budget` (information). The agent never chooses hardware or bids.
+
+[alias.gpu-std]
+description = "one 80 GB H100, the measurement hardware (bf16 results differ between GPU models)"
+request_gpus = 1
+request_cpus = 8
+request_memory_mb = 98304
+request_disk_gb = 100
+requirements = "regexp(\"H100\", TARGET.CUDADeviceName)"
+bid = 50
+
+[caps.dev]
+aliases = ["gpu-std"]
+max_concurrent_gpus = 1
+gpu_hours = 3.0
+max_job_min = 60
+
+[caps.full]
+aliases = ["gpu-std"]
+max_concurrent_gpus = 8
+gpu_hours = 10.0
+max_job_min = 120
+
+[caps.smoke]
+aliases = ["gpu-std"]
+max_concurrent_gpus = 1
+gpu_hours = 1.0
+max_job_min = 30
