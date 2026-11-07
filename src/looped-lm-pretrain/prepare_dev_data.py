@@ -1,7 +1,8 @@
-"""Tokenize one FineWeb shard into train.bin / val.bin with a given BPE tokenizer (tests/build/make_data.sh).
-
-    python3 tests/build/prepare.py --out DIR --repo HuggingFaceFW/fineweb-edu --revision REV \
-        --shard sample/10BT/001_00000.parquet --tokenizer tokenizer.json --train-tokens 250e6 --val-tokens 5e6
+# /// script
+# requires-python = ">=3.12"
+# dependencies = ["numpy", "pyarrow", "tokenizers", "huggingface-hub"]
+# ///
+"""Build the sandbox's dev tokens with `uv run prepare_dev_data.py`.
 
 Downloads one shard (pinned revision), tokenizes it (or trains a byte-level BPE tokenizer with an
 8192-token vocabulary on the first documents when --tokenizer is not given) and writes
@@ -16,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 import time
 from pathlib import Path
 
@@ -27,6 +29,7 @@ from tokenizers import Tokenizer, decoders, models, pre_tokenizers, trainers
 REPO = "HuggingFaceFW/fineweb-edu"
 SHARD = "sample/10BT/000_00000.parquet"
 EOT = "<|endoftext|>"
+PUBLIC = Path(__file__).resolve().parent / "environment" / "files" / "task" / "public"
 
 
 def texts(table_file, row_groups):
@@ -65,7 +68,13 @@ def main() -> None:
     parser.add_argument("--tokenizer", help="reuse this tokenizer.json instead of training one")
     parser.add_argument("--revision", help="dataset revision (commit) to download; default: the latest")
     parser.add_argument("--cache-dir", help="Hugging Face download cache (default: OUT/hf)")
-    args = parser.parse_args()
+    args = parser.parse_args(sys.argv[1:] or [
+        "--out", str(PUBLIC),
+        "--tokenizer", str(PUBLIC / "tokenizer.json"),
+        "--revision", "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9",
+        "--train-tokens", "250e6", "--val-tokens", "5e6", "--val-groups", "10",
+        "--cache-dir", str(Path.home() / ".cache" / "optimalresearch" / "hf"),
+    ])
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
 
@@ -93,7 +102,9 @@ def main() -> None:
 
         tokenizer.train_from_iterator(first_docs(), trainer)
         print(f"tokenizer trained in {time.time() - t:.0f} s", flush=True)
-    tokenizer.save(str(out / "tokenizer.json"))
+    tokenizer_path = out / "tokenizer.json"
+    if not args.tokenizer or Path(args.tokenizer).resolve() != tokenizer_path.resolve():
+        tokenizer.save(str(tokenizer_path))
 
     # Validation documents come from the last row groups, training documents from the first.
     val_groups = groups[-args.val_groups:]

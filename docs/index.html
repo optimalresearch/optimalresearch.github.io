@@ -14,9 +14,8 @@ header.site{position:sticky;top:0;z-index:4;background:var(--bg);border-bottom:1
 nav.report-nav{max-width:960px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;gap:20px;font-size:14px}
 .report-nav a{display:block;padding:14px 0;text-decoration:none;white-space:nowrap;color:var(--fg2)}
 .report-nav a:hover,.report-nav a:focus-visible{color:var(--fg);text-decoration:underline}
-.report-nav .back,.report-nav .code-link{color:var(--fg);font-weight:600}
+.report-nav .back{color:var(--fg);font-weight:600}
 .report-nav .back{border-right:1px solid var(--line);padding-right:20px}
-.report-nav .code-link{margin-left:auto}
 .report-nav .sections{display:flex;gap:20px;margin:0;padding:0;list-style:none}
 .report-nav .sections li{margin:0}
 header.site + main{padding-top:36px}
@@ -24,8 +23,12 @@ header.site + main{padding-top:36px}
   nav.report-nav{flex-wrap:wrap;gap:0 16px}
   .report-nav a{padding:9px 0}
   .report-nav .back{border:0;padding-right:0}
-  .report-nav .sections{order:1;flex-basis:100%;overflow-x:auto;gap:16px;border-top:1px solid var(--line)}
+  .report-nav .sections{order:1;flex-basis:100%;overflow-x:auto;gap:clamp(8px,2.5vw,16px);border-top:1px solid var(--line)}
   .report-nav .sections a{padding-inline:2px}
+}
+@media (max-width:360px){
+  .report-nav .sections{gap:7px}
+  .report-nav .sections a{padding-inline:0}
 }
 main:has(> .samples){min-height:100svh;display:flex;flex-direction:column;
                      gap:clamp(32px,4vh,48px);padding-block:clamp(36px,5vh,44px) clamp(36px,5vh,48px)}
@@ -39,7 +42,7 @@ main:has(> .samples){min-height:100svh;display:flex;flex-direction:column;
 .samples h2{font-size:28px;margin:0 0 16px}
 @media (max-width:600px){
   main:has(> .samples){gap:28px;padding-block:28px 36px}
-  .intro{order:1;margin:0}
+  .intro{margin:0}
 }
 h3{font-size:17px;margin:30px 0 8px;font-weight:600}h4,h5,h6{font-size:15px;margin:18px 0 6px;font-weight:600}
 p,ul,ol{margin:8px 0}li{margin:3px 0}ul,ol{padding-left:22px}
@@ -104,12 +107,15 @@ thead:not(:has(th:not(:empty))){display:none}
 .scoredef{display:grid;grid-template-columns:minmax(200px,auto) 1fr;gap:12px 40px;align-items:center;margin:12px 0 24px}
 .scoredef.bare{display:block;margin:20px 0 28px;padding:14px 18px;border-left:3px solid var(--line)}
 .doc p,.doc ul,.doc ol{max-width:none}
+.doc :not(pre)>code{overflow-wrap:anywhere}
 section.tab p{margin:0 0 10px}section.tab p>strong:first-child{font-weight:600}
 section.tab ul,section.tab ol{margin:0 0 14px}section.tab li{margin:2px 0;line-height:1.5}section.tab li>p{margin:0}
 section.tab ul{list-style:none;padding-left:1.4em}section.tab ul>li{position:relative}
 section.tab ul>li::before{content:"";position:absolute;left:-1.1em;top:.62em;width:5px;height:5px;background:#000;transform:rotate(45deg)}
 section.tab ol{padding-left:1.6em}.doc ul{list-style:disc;padding-left:22px}.doc ul>li::before{content:none}
 section.tab h3{margin:26px 0 8px}
+#analysis h3{font-size:21px}
+#analysis h4{font-size:16px}
 .bestline{margin:10px 0 0;font-size:14.5px;color:var(--fg2)}.bestline b{color:var(--acc);font-weight:600;font-variant-numeric:tabular-nums}
 .bestline a{color:var(--fg);text-decoration:none}.bestline .logo{width:15px;height:15px;vertical-align:-2px;margin-right:5px}.bestline a:hover{text-decoration:underline}
 .logo{width:16px;height:16px;flex:none;display:inline-block}.eff{color:var(--mut);font-weight:400;margin-left:2px}tr.best .eff{font-weight:400}

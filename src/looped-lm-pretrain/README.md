@@ -1,18 +1,17 @@
 # Looping Language Models
 
-See [the agent prompt](instruction.md) and the [starter submission](environment/files/task/starter/). The sandbox builds from `environment/Dockerfile` after generating the public development tokens.
+This is the agent sandbox for a Harbor task. See [task.toml](task.toml) for the Harbor configuration.
 
-From this directory, run:
+## Quickstart
+
+Use a Linux x86-64 machine with [uv](https://docs.astral.sh/uv/getting-started/installation/), Docker with NVIDIA GPU support, and one H200 (141 GB). Data preparation downloads a 2.2 GB FineWeb-Edu shard.
 
 ```bash
-python3 -m pip install numpy pyarrow tokenizers huggingface_hub
-python3 prepare_dev_data.py \
-  --out environment/files/task/public \
-  --tokenizer environment/files/task/public/tokenizer.json \
-  --revision 87f09149ef4734204d70ed1d046ddc9ca3f2b8f9 \
-  --train-tokens 250e6 --val-tokens 5e6 --val-groups 10 \
-  --cache-dir "$HOME/.cache/optimalresearch/hf"
-docker build -t optimalresearch-looped-lm-pretrain environment
+git clone --depth 1 https://github.com/optimalresearch/optimalresearch.github.io.git &&
+cd optimalresearch.github.io/src/looped-lm-pretrain &&
+uv run prepare_dev_data.py &&
+docker build -t optimalresearch-looped-lm-pretrain environment &&
+docker run --gpus 1 -it optimalresearch-looped-lm-pretrain bash
 ```
 
-This prepares the agent-facing FineWeb-Edu split. The published runs used an H200 GPU.
+Docker opens a shell in `/workspace` with the [starter model](environment/files/task/starter/) and tokenized dev data. The [agent prompt](instruction.md) lists the experiment commands. A scored Harbor run requires the separate verifier and held-out data.

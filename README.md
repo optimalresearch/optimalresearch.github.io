@@ -1,13 +1,13 @@
 # Optimal Research
 
-Research environments for evaluating how AI agents run experiments and improve their methods.
+Harbor research tasks for evaluating how AI agents run experiments and improve their methods.
 
 | Task | Report | Sandbox |
 | --- | --- | --- |
-| Looping Language Models | [Report](https://optimalresearch.github.io/looped-lm-pretrain/) | [Source](src/looped-lm-pretrain/) |
-| Learning and Forgetting | [Report](https://optimalresearch.github.io/learning-forgetting/) | [Source](src/learning-forgetting/) |
+| Looping Language Models | [Report](https://optimalresearch.github.io/looped-lm-pretrain/) | [Quickstart](src/looped-lm-pretrain/README.md#quickstart) |
+| Learning without forgetting | [Report](https://optimalresearch.github.io/learning-forgetting/) | [Quickstart](src/learning-forgetting/README.md#quickstart) |
 
-The sandbox directories contain the agent prompt, task configuration, container build files, and agent-facing code and data. Reproducing held-out rewards requires the sealed evaluator and evaluation datasets.
+Each sandbox includes the agent prompt, Harbor task configuration, Dockerfile, and the code and data the agent can use. Scored Harbor runs require the separate verifier and evaluation data.
 
 ## Website
 
