@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>Learning without forgetting</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"><style>:root{--bg:#ffffff;--fg:#111114;--fg2:#3f3f46;--mut:#686871;--line:#e5e5e8;--axis:#cdcdd4;--card:#f7f7f8;--acc:#c43c19;--ring:rgba(17,17,20,.08);--chip:#efeff2;--hover:rgba(17,17,20,.03);--shadow:none;--track:#e9e9ed;--base:#a1a1aa;--raised:#ffffff;--s1:#0072b2;--s2:#e69f00;--s3:#009e73;--s4:#d55e00;--s5:#cc79a7;--s6:#56b4e9;--s7:#a63d8f;--s8:#f0e442;--h0:#f7f7f8;--ht0:#111114;--h1:#d8e6ef;--ht1:#111114;--h2:#b9d6e6;--ht2:#111114;--h3:#9ac5de;--ht3:#111114;--h4:#7cb4d5;--ht4:#111114;--h5:#5da4cc;--ht5:#ffffff;--h6:#3e93c4;--ht6:#ffffff;--h7:#1f83bb;--ht7:#ffffff;--h8:#0072b2;--ht8:#ffffff;color-scheme:light}
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>Learning without forgetting</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"><style>:root{--bg:#ffffff;--fg:#111114;--fg2:#3f3f46;--mut:#686871;--line:#e5e5e8;--axis:#cdcdd4;--card:#f7f7f8;--acc:#c43c19;--ring:rgba(17,17,20,.08);--chip:#efeff2;--hover:rgba(17,17,20,.03);--shadow:none;--track:#e9e9ed;--base:#a1a1aa;--raised:#ffffff;--s1:#0072b2;--s2:#e69f00;--s3:#009e73;--s4:#d55e00;--s5:#cc79a7;--s6:#56b4e9;--s7:#a63d8f;--s8:#f0e442;--h0:#f7f7f8;--ht0:#111114;--h1:#d8e6ef;--ht1:#111114;--h2:#b9d6e6;--ht2:#111114;--h3:#9ac5de;--ht3:#111114;--h4:#7cb4d5;--ht4:#111114;--h5:#5da4cc;--ht5:#ffffff;--h6:#3e93c4;--ht6:#ffffff;--h7:#1f83bb;--ht7:#ffffff;--h8:#0072b2;--ht8:#ffffff;color-scheme:light}
 /* Prose is capped at 100 characters a line; tables, charts and verbatim documents run the full
    width of main (960px). */
 *{box-sizing:border-box}
@@ -27,11 +27,17 @@ header.site + main{padding-top:36px}
   .report-nav .sections{order:1;flex-basis:100%;overflow-x:auto;gap:16px;border-top:1px solid var(--line)}
   .report-nav .sections a{padding-inline:2px}
 }
-.intro{font-size:18px;line-height:1.5;color:var(--fg2);margin:0 0 28px}
+main:has(> .samples){display:grid;gap:30px;padding-block:36px 48px}
+.landing-title{font-size:clamp(36px,5vw,46px);margin:0}
+@media (min-width:1000px){.landing-title{margin-inline-start:-18px}}
+.intro{font-size:17px;line-height:1.5;color:var(--fg2)}
+.intro p,.intro ul{margin:0}
+.intro ul,.intro li+li{margin-top:6px}
+.samples h2{font-size:25px;margin:0 0 12px}
+@media (max-width:600px){main:has(> .samples){gap:22px;padding-block:24px 32px}}
 h3{font-size:17px;margin:30px 0 8px;font-weight:600}h4,h5,h6{font-size:15px;margin:18px 0 6px;font-weight:600}
 p,ul,ol{margin:8px 0}li{margin:3px 0}ul,ol{padding-left:22px}
 .sub{color:var(--fg2);margin:0;font-size:16px}
-.lede{font-size:17px;line-height:1.55;color:var(--fg)}
 .lede p{margin:0 0 8px}.lede p:last-child{margin-bottom:0}
 .lede-l{font-size:15px;font-weight:600;color:var(--fg);margin:0 0 6px}
 .blk{margin:24px 0}.blk>:last-child{margin-bottom:0}
@@ -152,30 +158,38 @@ blockquote{margin:8px 0;padding-left:12px;border-left:2px solid var(--line);colo
 .st-dot{stroke:var(--bg);stroke-width:1.5;outline:none}.st-dot.st-base{fill:var(--base)}.st-sd{stroke-width:1.5;opacity:.6}.st-mean{stroke-width:2.5}
 .spark .grid{stroke:var(--line)}
 td.best{font-size:24px;font-weight:600;line-height:1.2;white-space:nowrap}
-.tasklist{margin:18px 0 14px}
 .task{display:grid;grid-template-columns:minmax(0,1fr) 140px 400px;gap:20px 32px;padding:24px 0;border-top:1px solid var(--line);align-items:start}
 .task:first-child{border-top:0;padding-top:8px}
-.t-title{font-size:19px;font-weight:600;color:var(--fg);text-decoration:none}.t-title:hover{text-decoration:underline}
+.t-title{font-size:22px;font-weight:600;line-height:1.25;color:var(--fg)}
+a.t-title{text-decoration-color:currentColor}
 .t-sub{margin:6px 0 10px;color:var(--fg2)}.t-meta{margin:2px 0;font-size:13.5px;color:var(--mut)}
 .t-best{display:flex;flex-direction:column;gap:2px}.t-best .l{font-size:12.5px;color:var(--mut)}
-.t-best b{font-size:30px;font-weight:600;line-height:1.15;letter-spacing:-.01em;font-variant-numeric:tabular-nums;color:var(--acc)}
+.t-best b{font-size:32px;font-weight:600;line-height:1.15;letter-spacing:-.01em;font-variant-numeric:tabular-nums;color:var(--acc)}
 .t-who{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;color:var(--fg2)}.t-who .logo{width:15px;height:15px}
-@media (max-width:860px){.task{grid-template-columns:1fr}.t-pk .spark{width:100%;max-width:400px}}td.best .small{font-size:13px;letter-spacing:0;font-weight:400}
-</style></head><body><header class="site"><nav class="report-nav" aria-label="Report navigation"><a class="back" href="../index.html">← Back</a><ul class="sections"><li><a href="#evaluation">Task</a></li><li><a href="#results">Results</a></li><li><a href="#analysis">Analysis</a></li><li><a href="#contract">Prompt and rules</a></li></ul><a class="code-link" href="https://github.com/optimalresearch/optimalresearch.github.io/tree/main/src/learning-forgetting">Code</a></nav></header><main><h1>Learning without forgetting</h1><section id="evaluation" class="tab"><h2 class="sec">Task</h2><div class="lede"><p>Finetune Qwen3.5-4B to robustly learn a set of question-answer facts that occurred after the knowledge cut-off, with minimal forgetting to the base model capabilities.</p></div><div class="blk"><p class="lede-l">Score</p>
-<p>The submission is graded on the held-out 80 % of the samples, which the agent never sees.</p>
-<ul><li><strong>Learning:</strong> arithmetic mean of the accuracy on the held-out facts of Astrophysics2026QA and WorldNewsQA with rephrasings, and on the World Cup 2026 facts.</li><li><strong>Retention:</strong> geometric mean of the model's accuracy relative to the base model on the GSM8K test set and on the held-out part of four hidden sets the base model already answers correctly (past World Cups 1930-2022, 2016-2023 astronomy, 2016-2023 news, PopQA), i.e. the fraction of what the base model knew that survives.</li></ul><p class="formula-line">Score = <b>Learning² × Retention</b></p></div><div class="blk"><p class="lede-l">Dev eval</p>
-<p>The agent has black-box access to this eval while iterating. It is the same evaluation on the other 20 % of the samples: learning on a 20 % split of Astrophysics2026QA and WorldNewsQA with rephrasings, retention on 200 GSM8K train problems and on about 20 % of the four hidden sets.</p>
-</div>
-<p><strong>Note:</strong> Retention is a geometric mean so that forgetting any one set entirely zeroes it, and learning is squared so that it counts twice as much as retention. A score of 1.0 would be to learn all of the facts robustly to all of the phrasings, while retaining all of the old knowledge.</p></section><section id="results" class="tab"><h2 class="sec">Results</h2><div class="blk"><p class="lede-l">Setup</p><p>One H100 80GB GPU per run. Agent wall-clock limit 5 hours, GPU time limit 5 hours.</p></div><figcaption><span class="lead">Table 1:</span> <strong>Final score, learning accuracy, retention accuracy</strong> and agent time for each agent.</figcaption><div class="tw"><table class="lb"><thead><tr><th class="n">#</th><th>Run</th><th class="n sc">Score</th><th class="n">Learning</th><th class="n">Retention</th><th class="n">Agent time</th><th class="n">Dev checks</th><th class="n">Turns</th><th class="n">Output tokens</th></tr></thead><tbody><tr class="best"><td class="n">1</td><td class="run k"><span class="rn"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="#d97757" d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/></svg><a href="runs/opus-2.html">Opus 5.5 #2 <span class="eff">xhigh</span></a></span></td><td class="n sc"><span class="bar"><span class="track"><span class="fill s2" style="width:59.7%"></span></span><span class="bv">0.597</span></span></td><td class="n">0.820</td><td class="n">0.886</td><td class="n">3h 56m</td><td class="n">4</td><td class="n">183</td><td class="n">144,182</td></tr><tr class=""><td class="n">2</td><td class="run k"><span class="rn"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="#d97757" d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/></svg><a href="runs/opus-1.html">Opus 5.5 #1 <span class="eff">xhigh</span></a></span></td><td class="n sc"><span class="bar"><span class="track"><span class="fill s1" style="width:48.9%"></span></span><span class="bv">0.489</span></span></td><td class="n">0.768</td><td class="n">0.829</td><td class="n">4h 36m</td><td class="n">4</td><td class="n">138</td><td class="n">116,623</td></tr><tr class=""><td class="n">3</td><td class="run k"><span class="rn"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="#d97757" d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/></svg><a href="runs/opus-4.html">Opus 5.5 #4 <span class="eff">xhigh</span></a></span></td><td class="n sc"><span class="bar"><span class="track"><span class="fill s4" style="width:39.2%"></span></span><span class="bv">0.392</span></span></td><td class="n">0.711</td><td class="n">0.775</td><td class="n">4h 06m</td><td class="n">4</td><td class="n">115</td><td class="n">148,556</td></tr><tr class=""><td class="n">4</td><td class="run k"><span class="rn"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="#d97757" d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/></svg><a href="runs/opus-3.html">Opus 5.5 #3 <span class="eff">xhigh</span></a></span><div class="rnote">Output tokens include its Claude subagents.</div></td><td class="n sc"><span class="bar"><span class="track"><span class="fill s3" style="width:27.1%"></span></span><span class="bv">0.271</span></span></td><td class="n">0.616</td><td class="n">0.716</td><td class="n">4h 06m</td><td class="n">5</td><td class="n">306</td><td class="n">808,342</td></tr><tr class=""><td class="n">5</td><td class="run k"><span class="rn"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg><a href="runs/astra-1.html">GPT-6 Astra <span class="eff">xhigh</span></a></span></td><td class="n sc"><span class="bar"><span class="track"><span class="fill s5" style="width:25.9%"></span></span><span class="bv">0.259</span></span></td><td class="n">0.580</td><td class="n">0.768</td><td class="n">4h 48m</td><td class="n">8</td><td class="n">405</td><td class="n">337,004</td></tr><tr class=""><td class="n">6</td><td class="run k"><span class="rn"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg><a href="runs/sol-1.html">GPT-6.1 Sol <span class="eff">xhigh</span></a></span></td><td class="n sc"><span class="bar"><span class="track"><span class="fill s6" style="width:18.4%"></span></span><span class="bv">0.184</span></span></td><td class="n">0.466</td><td class="n">0.846</td><td class="n">4h 51m</td><td class="n">12</td><td class="n">385</td><td class="n">405,114</td></tr><tr class=""><td class="n">7</td><td class="run k"><span class="rn"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg><a href="runs/luna-1.html">GPT-6 Luna <span class="eff">xhigh</span></a></span></td><td class="n sc"><span class="bar"><span class="track"><span class="fill s7" style="width:8.9%"></span></span><span class="bv">0.089</span></span></td><td class="n">0.429</td><td class="n">0.482</td><td class="n">4h 08m</td><td class="n">7</td><td class="n">737</td><td class="n">119,249</td></tr><tr class=""><td class="n">8</td><td class="run"><span class="rn">Naive SFT</span><div class="rnote">Full fine-tune on the public questions only.</div></td><td class="n sc"><span class="bar"><span class="track"><span class="fill b" style="width:6.8%"></span></span><span class="bv">0.068</span></span></td><td class="n">0.378</td><td class="n">0.476</td><td class="n"><span class="na">-</span></td><td class="n"><span class="na">-</span></td><td class="n"><span class="na">-</span></td><td class="n"><span class="na">-</span></td></tr></tbody></table></div><figure class="fig fig-passk"><figcaption><span class="lead">Figure 1:</span> <strong>Pass@k of Opus 5.5</strong> demonstrates that diversity within the approaches the agent decides result in different scores.</figcaption><svg role="img" aria-label="Pass@k against k" xmlns:xlink="http://www.w3.org/1999/xlink" width="298.55952pt" height="212.15952pt" viewBox="0 0 298.55952 212.15952" xmlns="http://www.w3.org/2000/svg" version="1.1">
+@media (max-width:860px){
+  .task{grid-template-columns:minmax(0,1fr) 112px;gap:12px 14px;padding:16px 0}
+  .t-best{align-items:flex-end;text-align:right}
+  .t-who{flex-wrap:wrap;justify-content:flex-end;gap:2px 6px}
+  .t-pk{grid-column:1 / -1;min-width:0}
+  .t-pk .spark{width:100%;max-width:440px}
+}
+@media (max-width:480px){.t-pk .st-l{font-size:15px}}
+td.best .small{font-size:13px;letter-spacing:0;font-weight:400}
+</style></head><body><header class="site"><nav class="report-nav" aria-label="Report navigation"><a class="back" href="../index.html">← Back</a><ul class="sections"><li><a href="#evaluation">Task</a></li><li><a href="#results">Results</a></li><li><a href="#analysis">Analysis</a></li><li><a href="#contract">Prompt and rules</a></li></ul><a class="code-link" href="https://github.com/optimalresearch/optimalresearch.github.io/tree/main/src/learning-forgetting">Code</a></nav></header><main><h1>Learning without forgetting</h1><section id="evaluation" class="tab"><h2 class="sec">Task</h2><div class="lede"><p>Finetune Qwen3.5-4B to robustly learn a set of question-answer facts that occurred after the knowledge cut-off, with minimal forgetting to the base model capabilities.</p></div><p>The agent must fine-tune Qwen3.5-4B on 858 facts from after its knowledge cutoff while preserving the base model's knowledge and reasoning ability.</p>
+<p><strong>Learning:</strong> accuracy on held-out questions about the 243 astronomy and spaceflight facts in Astrophysics2026QA, the 610 news facts in WorldNewsQA, and the five World Cup 2026 facts. It is averaged across five question types, with chance correction for multiple choice.</p>
+<p><strong>Retention:</strong> the geometric mean of the model's accuracy relative to the base model on the GSM8K test set and four hidden knowledge sets covering past World Cups (1930–2022), astronomy (2016–2023), news (2016–2023), and PopQA. Each ratio is capped at 1. The hidden sets contain only questions the base model answers correctly. The agent is told that GSM8K is used, but the identities and domains of the four hidden sets are not disclosed to it.</p><p class="formula-line">Score (Pass@1) = <b>Learning² × Retention</b></p><p>The training data includes question–answer pairs for all 858 facts, source pages for the astronomy and news facts, and extra phrasings of the World Cup questions. Final grading uses unseen questions about 80% of the astronomy and news facts, plus all five World Cup facts, for 687 facts in total. Retention is measured on the GSM8K test set and the held-out portions of the four hidden knowledge sets.</p>
+<div class="blk"><p class="lede-l">Dev evaluation</p>
+<p>The agent can request a dev evaluation while iterating. It tests unseen questions about the other 20% of the astronomy and news facts (171 facts). Retention is measured on 200 GSM8K training problems and separate slices of the four hidden sets. The agent receives aggregate scores, without seeing the questions or answers, and the dev score uses the same formula as final grading.</p>
+<p>If accuracy on any one of the five retention sets falls to zero, retention and the final score are zero. Squaring learning gives it more weight in the score. A score of 1 requires perfect learning accuracy and no loss on any retention set.</p></div></section><section id="results" class="tab"><h2 class="sec">Results</h2><div class="blk"><p class="lede-l">Setup</p><p>One H100 80GB GPU per run. Agent wall-clock limit 5 hours, GPU time limit 5 hours.</p></div><figcaption><span class="lead">Table 1:</span> <strong>Final held-out score (Pass@1), learning and retention</strong> for each agent. Each row reports one run. Figure 1 shows the expected score when choosing the best of k Opus runs, with their mean at k = 1. Click to view traces.</figcaption><div class="tw"><table class="lb"><thead><tr><th class="n">#</th><th>Run</th><th class="n sc">Score (Pass@1)</th><th class="n">Learning</th><th class="n">Retention</th><th class="n">Agent time</th><th class="n">Dev checks</th><th class="n">Turns</th><th class="n">Output tokens</th></tr></thead><tbody><tr class="best"><td class="n">1</td><td class="run k"><span class="rn"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="#d97757" d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/></svg><a href="runs/opus-2.html">Opus 5.5 #2 <span class="eff">xhigh</span></a></span></td><td class="n sc"><span class="bar"><span class="track"><span class="fill s2" style="width:59.7%"></span></span><span class="bv">0.597</span></span></td><td class="n">0.820</td><td class="n">0.886</td><td class="n">3h 56m</td><td class="n">4</td><td class="n">183</td><td class="n">144,182</td></tr><tr class=""><td class="n">2</td><td class="run k"><span class="rn"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="#d97757" d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/></svg><a href="runs/opus-1.html">Opus 5.5 #1 <span class="eff">xhigh</span></a></span></td><td class="n sc"><span class="bar"><span class="track"><span class="fill s1" style="width:48.9%"></span></span><span class="bv">0.489</span></span></td><td class="n">0.768</td><td class="n">0.829</td><td class="n">4h 36m</td><td class="n">4</td><td class="n">138</td><td class="n">116,623</td></tr><tr class=""><td class="n">3</td><td class="run k"><span class="rn"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="#d97757" d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/></svg><a href="runs/opus-4.html">Opus 5.5 #4 <span class="eff">xhigh</span></a></span></td><td class="n sc"><span class="bar"><span class="track"><span class="fill s4" style="width:39.2%"></span></span><span class="bv">0.392</span></span></td><td class="n">0.711</td><td class="n">0.775</td><td class="n">4h 06m</td><td class="n">4</td><td class="n">115</td><td class="n">148,556</td></tr><tr class=""><td class="n">4</td><td class="run k"><span class="rn"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="#d97757" d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/></svg><a href="runs/opus-3.html">Opus 5.5 #3 <span class="eff">xhigh</span></a></span><div class="rnote">Output tokens include its Claude subagents.</div></td><td class="n sc"><span class="bar"><span class="track"><span class="fill s3" style="width:27.1%"></span></span><span class="bv">0.271</span></span></td><td class="n">0.616</td><td class="n">0.716</td><td class="n">4h 06m</td><td class="n">5</td><td class="n">306</td><td class="n">808,342</td></tr><tr class=""><td class="n">5</td><td class="run k"><span class="rn"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg><a href="runs/astra-1.html">GPT-6 Astra <span class="eff">xhigh</span></a></span></td><td class="n sc"><span class="bar"><span class="track"><span class="fill s5" style="width:25.9%"></span></span><span class="bv">0.259</span></span></td><td class="n">0.580</td><td class="n">0.768</td><td class="n">4h 48m</td><td class="n">8</td><td class="n">405</td><td class="n">337,004</td></tr><tr class=""><td class="n">6</td><td class="run k"><span class="rn"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg><a href="runs/sol-1.html">GPT-6.1 Sol <span class="eff">xhigh</span></a></span></td><td class="n sc"><span class="bar"><span class="track"><span class="fill s6" style="width:18.4%"></span></span><span class="bv">0.184</span></span></td><td class="n">0.466</td><td class="n">0.846</td><td class="n">4h 51m</td><td class="n">12</td><td class="n">385</td><td class="n">405,114</td></tr><tr class=""><td class="n">7</td><td class="run k"><span class="rn"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg><a href="runs/luna-1.html">GPT-6 Luna <span class="eff">xhigh</span></a></span></td><td class="n sc"><span class="bar"><span class="track"><span class="fill s7" style="width:8.9%"></span></span><span class="bv">0.089</span></span></td><td class="n">0.429</td><td class="n">0.482</td><td class="n">4h 08m</td><td class="n">7</td><td class="n">737</td><td class="n">119,249</td></tr><tr class=""><td class="n">8</td><td class="run"><span class="rn">Naive SFT</span><div class="rnote">Full fine-tune on the public questions only.</div></td><td class="n sc"><span class="bar"><span class="track"><span class="fill b" style="width:6.8%"></span></span><span class="bv">0.068</span></span></td><td class="n">0.378</td><td class="n">0.476</td><td class="n"><span class="na">-</span></td><td class="n"><span class="na">-</span></td><td class="n"><span class="na">-</span></td><td class="n"><span class="na">-</span></td></tr></tbody></table></div><figure class="fig fig-passk"><figcaption><span class="lead">Figure 1:</span> <strong>Pass@k for Opus 5.5.</strong> Expected best score across k runs.</figcaption><svg role="img" aria-label="Pass@k against k" xmlns:xlink="http://www.w3.org/1999/xlink" width="298.55952pt" height="212.15952pt" viewBox="0 0 298.55952 212.15952" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-11-07T00:04:05.225959</dc:date>
+    <dc:date>2026-11-06T20:37:55.309886</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
-      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+      <dc:title>Matplotlib v3.10.0, https://matplotlib.org/</dc:title>
      </cc:Agent>
     </dc:creator>
    </cc:Work>
@@ -195,10 +209,10 @@ z
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 41.619844 181.578739
-L 297.47952 181.578739
-L 297.47952 1.08
-L 41.619844 1.08
+    <path d="M 41.297187 182.191083
+L 297.47952 182.191083
+L 297.47952 4.499297
+L 41.297187 4.499297
 z
 " style="fill: #ffffff"/>
    </g>
@@ -206,221 +220,185 @@ z
     <g id="xtick_1">
      <g id="line2d_1">
       <defs>
-       <path id="m16c6627cee" d="M 0 0
+       <path id="m337770c150" d="M 0 0
 L 0 3
 " style="stroke: #686871; stroke-width: 0.5"/>
       </defs>
       <g>
-       <use xlink:href="#m16c6627cee" x="56.034473" y="181.578739" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+       <use xlink:href="#m337770c150" x="55.729995" y="182.191083" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_1">
-      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #686871" x="56.034473" y="194.916629" transform="rotate(-0 56.034473 194.916629)">1</text>
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #686871" x="55.729995" y="195.529676" transform="rotate(-0 55.729995 195.529676)">1</text>
      </g>
     </g>
     <g id="xtick_2">
      <g id="line2d_2">
       <g>
-       <use xlink:href="#m16c6627cee" x="128.107622" y="181.578739" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+       <use xlink:href="#m337770c150" x="127.894032" y="182.191083" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_2">
-      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #686871" x="128.107622" y="194.916629" transform="rotate(-0 128.107622 194.916629)">2</text>
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #686871" x="127.894032" y="195.529676" transform="rotate(-0 127.894032 195.529676)">2</text>
      </g>
     </g>
     <g id="xtick_3">
      <g id="line2d_3">
       <g>
-       <use xlink:href="#m16c6627cee" x="200.18077" y="181.578739" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+       <use xlink:href="#m337770c150" x="200.05807" y="182.191083" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_3">
-      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #686871" x="200.18077" y="194.916629" transform="rotate(-0 200.18077 194.916629)">3</text>
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #686871" x="200.05807" y="195.529676" transform="rotate(-0 200.05807 195.529676)">3</text>
      </g>
     </g>
     <g id="xtick_4">
      <g id="line2d_4">
       <g>
-       <use xlink:href="#m16c6627cee" x="272.253918" y="181.578739" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+       <use xlink:href="#m337770c150" x="272.222107" y="182.191083" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_4">
-      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #686871" x="272.253918" y="194.916629" transform="rotate(-0 272.253918 194.916629)">4</text>
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #686871" x="272.222107" y="195.529676" transform="rotate(-0 272.222107 195.529676)">4</text>
      </g>
     </g>
     <g id="text_5">
-     <text style="font-size: 10px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111114" x="169.549682" y="208.677176" transform="rotate(-0 169.549682 208.677176)">k (runs)</text>
+     <text style="font-size: 10px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111114" x="169.388354" y="208.999833" transform="rotate(-0 169.388354 208.999833)">k (runs)</text>
     </g>
    </g>
    <g id="matplotlib.axis_2">
     <g id="ytick_1">
      <g id="line2d_5">
-      <path d="M 41.619844 160.18572
-L 297.47952 160.18572
-" clip-path="url(#pa1c0c2962f)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+      <path d="M 41.297187 182.191083
+L 297.47952 182.191083
+" clip-path="url(#pea1e90579e)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_6">
       <defs>
-       <path id="m6bc080f93a" d="M 0 0
+       <path id="mdbb9c6ca16" d="M 0 0
 L -3 0
 " style="stroke: #686871; stroke-width: 0.5"/>
       </defs>
       <g>
-       <use xlink:href="#m6bc080f93a" x="41.619844" y="160.18572" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+       <use xlink:href="#mdbb9c6ca16" x="41.297187" y="182.191083" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_6">
-      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #686871" x="35.119844" y="163.604666" transform="rotate(-0 35.119844 163.604666)">0.30</text>
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #686871" x="34.797187" y="185.610379" transform="rotate(-0 34.797187 185.610379)">0.40</text>
      </g>
     </g>
     <g id="ytick_2">
      <g id="line2d_7">
-      <path d="M 41.619844 136.387118
-L 297.47952 136.387118
-" clip-path="url(#pa1c0c2962f)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+      <path d="M 41.297187 146.652725
+L 297.47952 146.652725
+" clip-path="url(#pea1e90579e)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_8">
       <g>
-       <use xlink:href="#m6bc080f93a" x="41.619844" y="136.387118" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+       <use xlink:href="#mdbb9c6ca16" x="41.297187" y="146.652725" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_7">
-      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #686871" x="35.119844" y="139.806063" transform="rotate(-0 35.119844 139.806063)">0.35</text>
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #686871" x="34.797187" y="150.072022" transform="rotate(-0 34.797187 150.072022)">0.46</text>
      </g>
     </g>
     <g id="ytick_3">
      <g id="line2d_9">
-      <path d="M 41.619844 112.588515
-L 297.47952 112.588515
-" clip-path="url(#pa1c0c2962f)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+      <path d="M 41.297187 111.114368
+L 297.47952 111.114368
+" clip-path="url(#pea1e90579e)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_10">
       <g>
-       <use xlink:href="#m6bc080f93a" x="41.619844" y="112.588515" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+       <use xlink:href="#mdbb9c6ca16" x="41.297187" y="111.114368" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_8">
-      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #686871" x="35.119844" y="116.00746" transform="rotate(-0 35.119844 116.00746)">0.40</text>
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #686871" x="34.797187" y="114.533665" transform="rotate(-0 34.797187 114.533665)">0.52</text>
      </g>
     </g>
     <g id="ytick_4">
      <g id="line2d_11">
-      <path d="M 41.619844 88.789912
-L 297.47952 88.789912
-" clip-path="url(#pa1c0c2962f)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+      <path d="M 41.297187 75.576011
+L 297.47952 75.576011
+" clip-path="url(#pea1e90579e)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_12">
       <g>
-       <use xlink:href="#m6bc080f93a" x="41.619844" y="88.789912" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+       <use xlink:href="#mdbb9c6ca16" x="41.297187" y="75.576011" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_9">
-      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #686871" x="35.119844" y="92.208857" transform="rotate(-0 35.119844 92.208857)">0.45</text>
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #686871" x="34.797187" y="78.995308" transform="rotate(-0 34.797187 78.995308)">0.58</text>
      </g>
     </g>
     <g id="ytick_5">
      <g id="line2d_13">
-      <path d="M 41.619844 64.991309
-L 297.47952 64.991309
-" clip-path="url(#pa1c0c2962f)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+      <path d="M 41.297187 40.037654
+L 297.47952 40.037654
+" clip-path="url(#pea1e90579e)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_14">
       <g>
-       <use xlink:href="#m6bc080f93a" x="41.619844" y="64.991309" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+       <use xlink:href="#mdbb9c6ca16" x="41.297187" y="40.037654" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_10">
-      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #686871" x="35.119844" y="68.410255" transform="rotate(-0 35.119844 68.410255)">0.50</text>
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #686871" x="34.797187" y="43.456951" transform="rotate(-0 34.797187 43.456951)">0.64</text>
      </g>
     </g>
     <g id="ytick_6">
      <g id="line2d_15">
-      <path d="M 41.619844 41.192707
-L 297.47952 41.192707
-" clip-path="url(#pa1c0c2962f)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
+      <path d="M 41.297187 4.499297
+L 297.47952 4.499297
+" clip-path="url(#pea1e90579e)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_16">
       <g>
-       <use xlink:href="#m6bc080f93a" x="41.619844" y="41.192707" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
+       <use xlink:href="#mdbb9c6ca16" x="41.297187" y="4.499297" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_11">
-      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #686871" x="35.119844" y="44.611652" transform="rotate(-0 35.119844 44.611652)">0.55</text>
+      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #686871" x="34.797187" y="7.918594" transform="rotate(-0 34.797187 7.918594)">0.70</text>
      </g>
     </g>
-    <g id="ytick_7">
-     <g id="line2d_17">
-      <path d="M 41.619844 17.394104
-L 297.47952 17.394104
-" clip-path="url(#pa1c0c2962f)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
-     </g>
-     <g id="line2d_18">
-      <g>
-       <use xlink:href="#m6bc080f93a" x="41.619844" y="17.394104" style="fill: #686871; stroke: #686871; stroke-width: 0.5"/>
-      </g>
-     </g>
-     <g id="text_12">
-      <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #686871" x="35.119844" y="20.813049" transform="rotate(-0 35.119844 20.813049)">0.60</text>
-     </g>
-    </g>
-    <g id="text_13">
-     <text style="font-size: 10px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111114" x="8.678438" y="91.329369" transform="rotate(-90 8.678438 91.329369)">pass@k</text>
+    <g id="text_12">
+     <text style="font-size: 10px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111114" x="8.678437" y="93.34519" transform="rotate(-90 8.678437 93.34519)">pass@k</text>
     </g>
    </g>
    <g id="patch_3">
-    <path d="M 41.619844 181.578739
-L 41.619844 1.08
+    <path d="M 41.297187 182.191083
+L 41.297187 4.499297
 " style="fill: none; stroke: #686871; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="patch_4">
-    <path d="M 41.619844 181.578739
-L 297.47952 181.578739
+    <path d="M 41.297187 182.191083
+L 297.47952 182.191083
 " style="fill: none; stroke: #686871; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
-   <g id="PathCollection_1">
-    <defs>
-     <path id="m2ba30099fa" d="M 0 1.322876
-C 0.350831 1.322876 0.68734 1.183489 0.935414 0.935414
-C 1.183489 0.68734 1.322876 0.350831 1.322876 0
-C 1.322876 -0.350831 1.183489 -0.68734 0.935414 -0.935414
-C 0.68734 -1.183489 0.350831 -1.322876 0 -1.322876
-C -0.350831 -1.322876 -0.68734 -1.183489 -0.935414 -0.935414
-C -1.183489 -0.68734 -1.322876 -0.350831 -1.322876 0
-C -1.322876 0.350831 -1.183489 0.68734 -0.935414 0.935414
-C -0.68734 1.183489 -0.350831 1.322876 0 1.322876
-z
-" style="stroke: #a1a1aa; stroke-width: 0.5"/>
-    </defs>
-    <g clip-path="url(#pa1c0c2962f)">
-     <use xlink:href="#m2ba30099fa" x="56.034473" y="19.036993" style="fill: #a1a1aa; stroke: #a1a1aa; stroke-width: 0.5"/>
-     <use xlink:href="#m2ba30099fa" x="56.034473" y="70.088505" style="fill: #a1a1aa; stroke: #a1a1aa; stroke-width: 0.5"/>
-     <use xlink:href="#m2ba30099fa" x="56.034473" y="116.215607" style="fill: #a1a1aa; stroke: #a1a1aa; stroke-width: 0.5"/>
-     <use xlink:href="#m2ba30099fa" x="56.034473" y="173.838656" style="fill: #a1a1aa; stroke: #a1a1aa; stroke-width: 0.5"/>
-    </g>
+   <g id="text_13">
+    <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111114" x="55.729995" y="151.176803" transform="rotate(-0 55.729995 151.176803)">0.437</text>
    </g>
    <g id="text_14">
-    <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #111114" x="61.034473" y="104.132831" transform="rotate(-0 61.034473 104.132831)">0.437</text>
+    <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111114" x="127.894032" y="98.234059" transform="rotate(-0 127.894032 98.234059)">0.527</text>
    </g>
    <g id="text_15">
-    <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111114" x="128.107622" y="43.08849" transform="rotate(-0 128.107622 43.08849)">0.527</text>
+    <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111114" x="200.05807" y="72.784901" transform="rotate(-0 200.05807 72.784901)">0.570</text>
    </g>
    <g id="text_16">
-    <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111114" x="200.18077" y="22.637761" transform="rotate(-0 200.18077 22.637761)">0.570</text>
+    <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111114" x="272.222107" y="56.902606" transform="rotate(-0 272.222107 56.902606)">0.597</text>
    </g>
    <g id="text_17">
-    <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #111114" x="272.253918" y="9.874884" transform="rotate(-0 272.253918 9.874884)">0.597</text>
+    <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #111114" x="292.355873" y="173.211692" transform="rotate(-0 292.355873 173.211692)">Opus 5.5</text>
    </g>
-   <g id="text_18">
-    <text style="font-size: 9px; font-family: 'IBM Plex Sans', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #111114" x="292.362326" y="172.19668" transform="rotate(-0 292.362326 172.19668)">Opus 5.5</text>
-   </g>
-   <g id="line2d_19">
-    <path d="M 56.034473 94.79494
-L 128.107622 52.250599
-L 200.18077 31.799871
-L 272.253918 19.036993
-" clip-path="url(#pa1c0c2962f)" style="fill: none; stroke: #111114; stroke-width: 1.8; stroke-linecap: square"/>
+   <g id="line2d_17">
+    <path d="M 55.729995 160.048522
+L 127.894032 107.105778
+L 200.05807 81.65662
+L 272.222107 65.774325
+" clip-path="url(#pea1e90579e)" style="fill: none; stroke: #111114; stroke-width: 1.8; stroke-linecap: square"/>
     <defs>
-     <path id="mff8411c0d7" d="M 0 1.4
+     <path id="ma29a46fa6c" d="M 0 1.4
 C 0.371284 1.4 0.727412 1.252487 0.989949 0.989949
 C 1.252487 0.727412 1.4 0.371284 1.4 0
 C 1.4 -0.371284 1.252487 -0.727412 0.989949 -0.989949
@@ -432,21 +410,21 @@ C -0.727412 1.252487 -0.371284 1.4 0 1.4
 z
 " style="stroke: #111114"/>
     </defs>
-    <g clip-path="url(#pa1c0c2962f)">
-     <use xlink:href="#mff8411c0d7" x="56.034473" y="94.79494" style="fill: #111114; stroke: #111114"/>
-     <use xlink:href="#mff8411c0d7" x="128.107622" y="52.250599" style="fill: #111114; stroke: #111114"/>
-     <use xlink:href="#mff8411c0d7" x="200.18077" y="31.799871" style="fill: #111114; stroke: #111114"/>
-     <use xlink:href="#mff8411c0d7" x="272.253918" y="19.036993" style="fill: #111114; stroke: #111114"/>
+    <g clip-path="url(#pea1e90579e)">
+     <use xlink:href="#ma29a46fa6c" x="55.729995" y="160.048522" style="fill: #111114; stroke: #111114"/>
+     <use xlink:href="#ma29a46fa6c" x="127.894032" y="107.105778" style="fill: #111114; stroke: #111114"/>
+     <use xlink:href="#ma29a46fa6c" x="200.05807" y="81.65662" style="fill: #111114; stroke: #111114"/>
+     <use xlink:href="#ma29a46fa6c" x="272.222107" y="65.774325" style="fill: #111114; stroke: #111114"/>
     </g>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="pa1c0c2962f">
-   <rect x="41.619844" y="1.08" width="255.859676" height="180.498739"/>
+  <clipPath id="pea1e90579e">
+   <rect x="41.297187" y="4.499297" width="256.182333" height="177.691786"/>
   </clipPath>
  </defs>
-</svg></figure><figure class="fig fig-dev"><figcaption><span class="lead">Figure 2:</span> <strong>Dev score over time.</strong> We see that over time the agent utilizes the dev score feedback to refine its approach, resulting in improved performance. Each line follows a run's dev checks and ◆ is the final score of its submission.</figcaption><svg role="img" aria-label="Dev score against agent time, per run" xmlns:xlink="http://www.w3.org/1999/xlink" width="514.55952pt" height="269.75952pt" viewBox="0 0 514.55952 269.75952" xmlns="http://www.w3.org/2000/svg" version="1.1">
+</svg></figure><figure class="fig fig-dev"><figcaption><span class="lead">Figure 2:</span> Each line shows the dev scores for one run. ◆ marks the submission's final score on a separate set of questions.</figcaption><svg role="img" aria-label="Dev score against agent time, per run" xmlns:xlink="http://www.w3.org/1999/xlink" width="514.55952pt" height="269.75952pt" viewBox="0 0 514.55952 269.75952" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
@@ -466,19 +444,19 @@ z
  </defs>
  <g id="figure_1">
   <g id="patch_1">
-   <path d="M 0 269.75952
-L 514.55952 269.75952
-L 514.55952 0
-L 0 0
+   <path d="M 0 269.75952 
+L 514.55952 269.75952 
+L 514.55952 0 
+L 0 0 
 z
 " style="fill: #ffffff"/>
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 35.893594 239.178739
-L 450.987645 239.178739
-L 450.987645 1.08
-L 35.893594 1.08
+    <path d="M 35.893594 239.178739 
+L 450.987645 239.178739 
+L 450.987645 1.08 
+L 35.893594 1.08 
 z
 " style="fill: #ffffff"/>
    </g>
@@ -486,8 +464,8 @@ z
     <g id="xtick_1">
      <g id="line2d_1">
       <defs>
-       <path id="m8d1b62df47" d="M 0 0
-L 0 3
+       <path id="m8d1b62df47" d="M 0 0 
+L 0 3 
 " style="stroke: #686871; stroke-width: 0.5"/>
       </defs>
       <g>
@@ -565,14 +543,14 @@ L 0 3
    <g id="matplotlib.axis_2">
     <g id="ytick_1">
      <g id="line2d_8">
-      <path d="M 35.893594 212.593033
-L 450.987645 212.593033
+      <path d="M 35.893594 212.593033 
+L 450.987645 212.593033 
 " clip-path="url(#p1d17693ebb)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_9">
       <defs>
-       <path id="m9f00225970" d="M 0 0
-L -3 0
+       <path id="m9f00225970" d="M 0 0 
+L -3 0 
 " style="stroke: #686871; stroke-width: 0.5"/>
       </defs>
       <g>
@@ -585,8 +563,8 @@ L -3 0
     </g>
     <g id="ytick_2">
      <g id="line2d_10">
-      <path d="M 35.893594 174.146603
-L 450.987645 174.146603
+      <path d="M 35.893594 174.146603 
+L 450.987645 174.146603 
 " clip-path="url(#p1d17693ebb)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_11">
@@ -600,8 +578,8 @@ L 450.987645 174.146603
     </g>
     <g id="ytick_3">
      <g id="line2d_12">
-      <path d="M 35.893594 135.700173
-L 450.987645 135.700173
+      <path d="M 35.893594 135.700173 
+L 450.987645 135.700173 
 " clip-path="url(#p1d17693ebb)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_13">
@@ -615,8 +593,8 @@ L 450.987645 135.700173
     </g>
     <g id="ytick_4">
      <g id="line2d_14">
-      <path d="M 35.893594 97.253744
-L 450.987645 97.253744
+      <path d="M 35.893594 97.253744 
+L 450.987645 97.253744 
 " clip-path="url(#p1d17693ebb)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_15">
@@ -630,8 +608,8 @@ L 450.987645 97.253744
     </g>
     <g id="ytick_5">
      <g id="line2d_16">
-      <path d="M 35.893594 58.807314
-L 450.987645 58.807314
+      <path d="M 35.893594 58.807314 
+L 450.987645 58.807314 
 " clip-path="url(#p1d17693ebb)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_17">
@@ -645,8 +623,8 @@ L 450.987645 58.807314
     </g>
     <g id="ytick_6">
      <g id="line2d_18">
-      <path d="M 35.893594 20.360884
-L 450.987645 20.360884
+      <path d="M 35.893594 20.360884 
+L 450.987645 20.360884 
 " clip-path="url(#p1d17693ebb)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_19">
@@ -663,21 +641,21 @@ L 450.987645 20.360884
     </g>
    </g>
    <g id="line2d_20">
-    <path d="M 159.453256 143.004995
-L 235.830562 98.407137
-L 321.339936 63.80535
-L 417.088297 49.580171
+    <path d="M 159.453256 143.004995 
+L 235.830562 98.407137 
+L 321.339936 63.80535 
+L 417.088297 49.580171 
 " clip-path="url(#p1d17693ebb)" style="fill: none; stroke: #0072b2; stroke-opacity: 0.9; stroke-width: 1.8; stroke-linecap: square"/>
     <defs>
-     <path id="m367055ea1e" d="M 0 1.4
-C 0.371284 1.4 0.727412 1.252487 0.989949 0.989949
-C 1.252487 0.727412 1.4 0.371284 1.4 0
-C 1.4 -0.371284 1.252487 -0.727412 0.989949 -0.989949
-C 0.727412 -1.252487 0.371284 -1.4 0 -1.4
-C -0.371284 -1.4 -0.727412 -1.252487 -0.989949 -0.989949
-C -1.252487 -0.727412 -1.4 -0.371284 -1.4 0
-C -1.4 0.371284 -1.252487 0.727412 -0.989949 0.989949
-C -0.727412 1.252487 -0.371284 1.4 0 1.4
+     <path id="m367055ea1e" d="M 0 1.4 
+C 0.371284 1.4 0.727412 1.252487 0.989949 0.989949 
+C 1.252487 0.727412 1.4 0.371284 1.4 0 
+C 1.4 -0.371284 1.252487 -0.727412 0.989949 -0.989949 
+C 0.727412 -1.252487 0.371284 -1.4 0 -1.4 
+C -0.371284 -1.4 -0.727412 -1.252487 -0.989949 -0.989949 
+C -1.252487 -0.727412 -1.4 -0.371284 -1.4 0 
+C -1.4 0.371284 -1.252487 0.727412 -0.989949 0.989949 
+C -0.727412 1.252487 -0.371284 1.4 0 1.4 
 z
 " style="stroke: #0072b2; stroke-opacity: 0.9"/>
     </defs>
@@ -690,10 +668,10 @@ z
    </g>
    <g id="line2d_21">
     <defs>
-     <path id="mfcd5af2030" d="M -0 3.535534
-L 3.535534 0
-L 0 -3.535534
-L -3.535534 -0
+     <path id="mfcd5af2030" d="M -0 3.535534 
+L 3.535534 0 
+L 0 -3.535534 
+L -3.535534 -0 
 z
 " style="stroke: #0072b2; stroke-linejoin: miter"/>
     </defs>
@@ -702,21 +680,21 @@ z
     </g>
    </g>
    <g id="line2d_22">
-    <path d="M 138.975283 92.640172
-L 247.453195 11.90267
-L 342.924827 12.671599
-L 360.497142 12.287134
+    <path d="M 138.975283 92.640172 
+L 247.453195 11.90267 
+L 342.924827 12.671599 
+L 360.497142 12.287134 
 " clip-path="url(#p1d17693ebb)" style="fill: none; stroke: #e69f00; stroke-opacity: 0.9; stroke-width: 1.8; stroke-linecap: square"/>
     <defs>
-     <path id="m49b7e0d7d0" d="M 0 1.4
-C 0.371284 1.4 0.727412 1.252487 0.989949 0.989949
-C 1.252487 0.727412 1.4 0.371284 1.4 0
-C 1.4 -0.371284 1.252487 -0.727412 0.989949 -0.989949
-C 0.727412 -1.252487 0.371284 -1.4 0 -1.4
-C -0.371284 -1.4 -0.727412 -1.252487 -0.989949 -0.989949
-C -1.252487 -0.727412 -1.4 -0.371284 -1.4 0
-C -1.4 0.371284 -1.252487 0.727412 -0.989949 0.989949
-C -0.727412 1.252487 -0.371284 1.4 0 1.4
+     <path id="m49b7e0d7d0" d="M 0 1.4 
+C 0.371284 1.4 0.727412 1.252487 0.989949 0.989949 
+C 1.252487 0.727412 1.4 0.371284 1.4 0 
+C 1.4 -0.371284 1.252487 -0.727412 0.989949 -0.989949 
+C 0.727412 -1.252487 0.371284 -1.4 0 -1.4 
+C -0.371284 -1.4 -0.727412 -1.252487 -0.989949 -0.989949 
+C -1.252487 -0.727412 -1.4 -0.371284 -1.4 0 
+C -1.4 0.371284 -1.252487 0.727412 -0.989949 0.989949 
+C -0.727412 1.252487 -0.371284 1.4 0 1.4 
 z
 " style="stroke: #e69f00; stroke-opacity: 0.9"/>
     </defs>
@@ -729,10 +707,10 @@ z
    </g>
    <g id="line2d_23">
     <defs>
-     <path id="mc14788ec43" d="M -0 3.535534
-L 3.535534 0
-L 0 -3.535534
-L -3.535534 -0
+     <path id="mc14788ec43" d="M -0 3.535534 
+L 3.535534 0 
+L 0 -3.535534 
+L -3.535534 -0 
 z
 " style="stroke: #e69f00; stroke-linejoin: miter"/>
     </defs>
@@ -741,22 +719,22 @@ z
     </g>
    </g>
    <g id="line2d_24">
-    <path d="M 132.195414 201.059104
-L 215.629318 190.678568
-L 284.258201 126.088566
-L 295.46574 136.469102
-L 374.33361 157.230174
+    <path d="M 132.195414 201.059104 
+L 215.629318 190.678568 
+L 284.258201 126.088566 
+L 295.46574 136.469102 
+L 374.33361 157.230174 
 " clip-path="url(#p1d17693ebb)" style="fill: none; stroke: #009e73; stroke-opacity: 0.9; stroke-width: 1.8; stroke-linecap: square"/>
     <defs>
-     <path id="m99a8b0533f" d="M 0 1.4
-C 0.371284 1.4 0.727412 1.252487 0.989949 0.989949
-C 1.252487 0.727412 1.4 0.371284 1.4 0
-C 1.4 -0.371284 1.252487 -0.727412 0.989949 -0.989949
-C 0.727412 -1.252487 0.371284 -1.4 0 -1.4
-C -0.371284 -1.4 -0.727412 -1.252487 -0.989949 -0.989949
-C -1.252487 -0.727412 -1.4 -0.371284 -1.4 0
-C -1.4 0.371284 -1.252487 0.727412 -0.989949 0.989949
-C -0.727412 1.252487 -0.371284 1.4 0 1.4
+     <path id="m99a8b0533f" d="M 0 1.4 
+C 0.371284 1.4 0.727412 1.252487 0.989949 0.989949 
+C 1.252487 0.727412 1.4 0.371284 1.4 0 
+C 1.4 -0.371284 1.252487 -0.727412 0.989949 -0.989949 
+C 0.727412 -1.252487 0.371284 -1.4 0 -1.4 
+C -0.371284 -1.4 -0.727412 -1.252487 -0.989949 -0.989949 
+C -1.252487 -0.727412 -1.4 -0.371284 -1.4 0 
+C -1.4 0.371284 -1.252487 0.727412 -0.989949 0.989949 
+C -0.727412 1.252487 -0.371284 1.4 0 1.4 
 z
 " style="stroke: #009e73; stroke-opacity: 0.9"/>
     </defs>
@@ -770,10 +748,10 @@ z
    </g>
    <g id="line2d_25">
     <defs>
-     <path id="m6e2df2d893" d="M -0 3.535534
-L 3.535534 0
-L 0 -3.535534
-L -3.535534 -0
+     <path id="m6e2df2d893" d="M -0 3.535534 
+L 3.535534 0 
+L 0 -3.535534 
+L -3.535534 -0 
 z
 " style="stroke: #009e73; stroke-linejoin: miter"/>
     </defs>
@@ -782,21 +760,21 @@ z
     </g>
    </g>
    <g id="line2d_26">
-    <path d="M 123.755168 144.158388
-L 208.157625 110.709994
-L 350.673249 93.793565
-L 375.302163 88.795529
+    <path d="M 123.755168 144.158388 
+L 208.157625 110.709994 
+L 350.673249 93.793565 
+L 375.302163 88.795529 
 " clip-path="url(#p1d17693ebb)" style="fill: none; stroke: #d55e00; stroke-opacity: 0.9; stroke-width: 1.8; stroke-linecap: square"/>
     <defs>
-     <path id="mbc6e2e6f2e" d="M 0 1.4
-C 0.371284 1.4 0.727412 1.252487 0.989949 0.989949
-C 1.252487 0.727412 1.4 0.371284 1.4 0
-C 1.4 -0.371284 1.252487 -0.727412 0.989949 -0.989949
-C 0.727412 -1.252487 0.371284 -1.4 0 -1.4
-C -0.371284 -1.4 -0.727412 -1.252487 -0.989949 -0.989949
-C -1.252487 -0.727412 -1.4 -0.371284 -1.4 0
-C -1.4 0.371284 -1.252487 0.727412 -0.989949 0.989949
-C -0.727412 1.252487 -0.371284 1.4 0 1.4
+     <path id="mbc6e2e6f2e" d="M 0 1.4 
+C 0.371284 1.4 0.727412 1.252487 0.989949 0.989949 
+C 1.252487 0.727412 1.4 0.371284 1.4 0 
+C 1.4 -0.371284 1.252487 -0.727412 0.989949 -0.989949 
+C 0.727412 -1.252487 0.371284 -1.4 0 -1.4 
+C -0.371284 -1.4 -0.727412 -1.252487 -0.989949 -0.989949 
+C -1.252487 -0.727412 -1.4 -0.371284 -1.4 0 
+C -1.4 0.371284 -1.252487 0.727412 -0.989949 0.989949 
+C -0.727412 1.252487 -0.371284 1.4 0 1.4 
 z
 " style="stroke: #d55e00; stroke-opacity: 0.9"/>
     </defs>
@@ -809,10 +787,10 @@ z
    </g>
    <g id="line2d_27">
     <defs>
-     <path id="m0888fa41ba" d="M -0 3.535534
-L 3.535534 0
-L 0 -3.535534
-L -3.535534 -0
+     <path id="m0888fa41ba" d="M -0 3.535534 
+L 3.535534 0 
+L 0 -3.535534 
+L -3.535534 -0 
 z
 " style="stroke: #d55e00; stroke-linejoin: miter"/>
     </defs>
@@ -821,25 +799,25 @@ z
     </g>
    </g>
    <g id="line2d_28">
-    <path d="M 94.28349 191.831961
-L 175.22683 148.387495
-L 220.195353 189.909639
-L 283.151284 135.315709
-L 338.082063 131.471066
-L 384.849326 137.622495
-L 418.610309 136.469102
-L 430.648036 134.162316
+    <path d="M 94.28349 191.831961 
+L 175.22683 148.387495 
+L 220.195353 189.909639 
+L 283.151284 135.315709 
+L 338.082063 131.471066 
+L 384.849326 137.622495 
+L 418.610309 136.469102 
+L 430.648036 134.162316 
 " clip-path="url(#p1d17693ebb)" style="fill: none; stroke: #cc79a7; stroke-opacity: 0.9; stroke-width: 1.8; stroke-linecap: square"/>
     <defs>
-     <path id="mc507e2ff92" d="M 0 1.4
-C 0.371284 1.4 0.727412 1.252487 0.989949 0.989949
-C 1.252487 0.727412 1.4 0.371284 1.4 0
-C 1.4 -0.371284 1.252487 -0.727412 0.989949 -0.989949
-C 0.727412 -1.252487 0.371284 -1.4 0 -1.4
-C -0.371284 -1.4 -0.727412 -1.252487 -0.989949 -0.989949
-C -1.252487 -0.727412 -1.4 -0.371284 -1.4 0
-C -1.4 0.371284 -1.252487 0.727412 -0.989949 0.989949
-C -0.727412 1.252487 -0.371284 1.4 0 1.4
+     <path id="mc507e2ff92" d="M 0 1.4 
+C 0.371284 1.4 0.727412 1.252487 0.989949 0.989949 
+C 1.252487 0.727412 1.4 0.371284 1.4 0 
+C 1.4 -0.371284 1.252487 -0.727412 0.989949 -0.989949 
+C 0.727412 -1.252487 0.371284 -1.4 0 -1.4 
+C -0.371284 -1.4 -0.727412 -1.252487 -0.989949 -0.989949 
+C -1.252487 -0.727412 -1.4 -0.371284 -1.4 0 
+C -1.4 0.371284 -1.252487 0.727412 -0.989949 0.989949 
+C -0.727412 1.252487 -0.371284 1.4 0 1.4 
 z
 " style="stroke: #cc79a7; stroke-opacity: 0.9"/>
     </defs>
@@ -856,10 +834,10 @@ z
    </g>
    <g id="line2d_29">
     <defs>
-     <path id="m98858ee814" d="M -0 3.535534
-L 3.535534 0
-L 0 -3.535534
-L -3.535534 -0
+     <path id="m98858ee814" d="M -0 3.535534 
+L 3.535534 0 
+L 0 -3.535534 
+L -3.535534 -0 
 z
 " style="stroke: #cc79a7; stroke-linejoin: miter"/>
     </defs>
@@ -868,29 +846,29 @@ z
     </g>
    </g>
    <g id="line2d_30">
-    <path d="M 96.63569 200.290175
-L 122.233156 198.367854
-L 196.258262 202.981425
-L 231.264527 201.059104
-L 282.73619 184.527139
-L 330.056911 187.987318
-L 350.811614 180.682496
-L 394.258125 189.525175
-L 404.773841 182.989282
-L 416.119745 184.142675
-L 425.390179 181.835889
-L 435.214071 186.833925
+    <path d="M 96.63569 200.290175 
+L 122.233156 198.367854 
+L 196.258262 202.981425 
+L 231.264527 201.059104 
+L 282.73619 184.527139 
+L 330.056911 187.987318 
+L 350.811614 180.682496 
+L 394.258125 189.525175 
+L 404.773841 182.989282 
+L 416.119745 184.142675 
+L 425.390179 181.835889 
+L 435.214071 186.833925 
 " clip-path="url(#p1d17693ebb)" style="fill: none; stroke: #56b4e9; stroke-opacity: 0.9; stroke-width: 1.8; stroke-linecap: square"/>
     <defs>
-     <path id="md96255fbd3" d="M 0 1.4
-C 0.371284 1.4 0.727412 1.252487 0.989949 0.989949
-C 1.252487 0.727412 1.4 0.371284 1.4 0
-C 1.4 -0.371284 1.252487 -0.727412 0.989949 -0.989949
-C 0.727412 -1.252487 0.371284 -1.4 0 -1.4
-C -0.371284 -1.4 -0.727412 -1.252487 -0.989949 -0.989949
-C -1.252487 -0.727412 -1.4 -0.371284 -1.4 0
-C -1.4 0.371284 -1.252487 0.727412 -0.989949 0.989949
-C -0.727412 1.252487 -0.371284 1.4 0 1.4
+     <path id="md96255fbd3" d="M 0 1.4 
+C 0.371284 1.4 0.727412 1.252487 0.989949 0.989949 
+C 1.252487 0.727412 1.4 0.371284 1.4 0 
+C 1.4 -0.371284 1.252487 -0.727412 0.989949 -0.989949 
+C 0.727412 -1.252487 0.371284 -1.4 0 -1.4 
+C -0.371284 -1.4 -0.727412 -1.252487 -0.989949 -0.989949 
+C -1.252487 -0.727412 -1.4 -0.371284 -1.4 0 
+C -1.4 0.371284 -1.252487 0.727412 -0.989949 0.989949 
+C -0.727412 1.252487 -0.371284 1.4 0 1.4 
 z
 " style="stroke: #56b4e9; stroke-opacity: 0.9"/>
     </defs>
@@ -911,10 +889,10 @@ z
    </g>
    <g id="line2d_31">
     <defs>
-     <path id="m896724adbc" d="M -0 3.535534
-L 3.535534 0
-L 0 -3.535534
-L -3.535534 -0
+     <path id="m896724adbc" d="M -0 3.535534 
+L 3.535534 0 
+L 0 -3.535534 
+L -3.535534 -0 
 z
 " style="stroke: #56b4e9; stroke-linejoin: miter"/>
     </defs>
@@ -923,24 +901,24 @@ z
     </g>
    </g>
    <g id="line2d_32">
-    <path d="M 104.384112 220.666783
-L 130.258308 225.664819
-L 168.585325 228.356069
-L 212.308566 224.126962
-L 261.428028 222.973569
-L 318.157549 220.282319
-L 377.377633 216.82214
+    <path d="M 104.384112 220.666783 
+L 130.258308 225.664819 
+L 168.585325 228.356069 
+L 212.308566 224.126962 
+L 261.428028 222.973569 
+L 318.157549 220.282319 
+L 377.377633 216.82214 
 " clip-path="url(#p1d17693ebb)" style="fill: none; stroke: #a63d8f; stroke-opacity: 0.9; stroke-width: 1.8; stroke-linecap: square"/>
     <defs>
-     <path id="m98facf6020" d="M 0 1.4
-C 0.371284 1.4 0.727412 1.252487 0.989949 0.989949
-C 1.252487 0.727412 1.4 0.371284 1.4 0
-C 1.4 -0.371284 1.252487 -0.727412 0.989949 -0.989949
-C 0.727412 -1.252487 0.371284 -1.4 0 -1.4
-C -0.371284 -1.4 -0.727412 -1.252487 -0.989949 -0.989949
-C -1.252487 -0.727412 -1.4 -0.371284 -1.4 0
-C -1.4 0.371284 -1.252487 0.727412 -0.989949 0.989949
-C -0.727412 1.252487 -0.371284 1.4 0 1.4
+     <path id="m98facf6020" d="M 0 1.4 
+C 0.371284 1.4 0.727412 1.252487 0.989949 0.989949 
+C 1.252487 0.727412 1.4 0.371284 1.4 0 
+C 1.4 -0.371284 1.252487 -0.727412 0.989949 -0.989949 
+C 0.727412 -1.252487 0.371284 -1.4 0 -1.4 
+C -0.371284 -1.4 -0.727412 -1.252487 -0.989949 -0.989949 
+C -1.252487 -0.727412 -1.4 -0.371284 -1.4 0 
+C -1.4 0.371284 -1.252487 0.727412 -0.989949 0.989949 
+C -0.727412 1.252487 -0.371284 1.4 0 1.4 
 z
 " style="stroke: #a63d8f; stroke-opacity: 0.9"/>
     </defs>
@@ -956,10 +934,10 @@ z
    </g>
    <g id="line2d_33">
     <defs>
-     <path id="ma00f1b32dc" d="M -0 3.535534
-L 3.535534 0
-L 0 -3.535534
-L -3.535534 -0
+     <path id="ma00f1b32dc" d="M -0 3.535534 
+L 3.535534 0 
+L 0 -3.535534 
+L -3.535534 -0 
 z
 " style="stroke: #a63d8f; stroke-linejoin: miter"/>
     </defs>
@@ -968,18 +946,18 @@ z
     </g>
    </g>
    <g id="line2d_34">
-    <path d="M 35.893594 224.853528
-L 450.987645 224.853528
+    <path d="M 35.893594 224.853528 
+L 450.987645 224.853528 
 " clip-path="url(#p1d17693ebb)" style="fill: none; stroke-dasharray: 1.8,1.2; stroke-dashoffset: 0; stroke: #686871; stroke-width: 0.6"/>
    </g>
    <g id="patch_3">
-    <path d="M 35.893594 239.178739
-L 35.893594 1.08
+    <path d="M 35.893594 239.178739 
+L 35.893594 1.08 
 " style="fill: none; stroke: #686871; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="patch_4">
-    <path d="M 35.893594 239.178739
-L 450.987645 239.178739
+    <path d="M 35.893594 239.178739 
+L 450.987645 239.178739 
 " style="fill: none; stroke: #686871; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="text_16">
@@ -1013,7 +991,7 @@ L 450.987645 239.178739
    <rect x="35.893594" y="1.08" width="415.094051" height="238.098739"/>
   </clipPath>
  </defs>
-</svg></figure><figure class="fig fig-components"><figcaption><span class="lead">Figure 3:</span> <strong>Learning and retention trade-offs.</strong> We plot the learning and retention accuracy on the dev set for each agent's trajectory in order, ending at ◆. While the dev score in Figure 2 mostly rises over a run, the path here shows the agents trading learning against retention of the base model to get there.</figcaption><svg role="img" aria-label="The two parts of the score, one dot per run" xmlns:xlink="http://www.w3.org/1999/xlink" width="356.15952pt" height="312.95952pt" viewBox="0 0 356.15952 312.95952" xmlns="http://www.w3.org/2000/svg" version="1.1">
+</svg></figure><figure class="fig fig-components"><figcaption><span class="lead">Figure 3:</span> Each line connects a run's dev checks in order. ◆ shows the final held-out learning and retention for the submitted model.</figcaption><svg role="img" aria-label="The two parts of the score, one dot per run" xmlns:xlink="http://www.w3.org/1999/xlink" width="356.15952pt" height="312.95952pt" viewBox="0 0 356.15952 312.95952" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
@@ -1033,33 +1011,33 @@ L 450.987645 239.178739
  </defs>
  <g id="figure_1">
   <g id="patch_1">
-   <path d="M 0 312.95952
-L 356.15952 312.95952
-L 356.15952 0
-L 0 0
+   <path d="M 0 312.95952 
+L 356.15952 312.95952 
+L 356.15952 0 
+L 0 0 
 z
 " style="fill: #ffffff"/>
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 35.893594 282.378739
-L 347.923114 282.378739
-L 347.923114 4.498945
-L 35.893594 4.498945
+    <path d="M 35.893594 282.378739 
+L 347.923114 282.378739 
+L 347.923114 4.498945 
+L 35.893594 4.498945 
 z
 " style="fill: #ffffff"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="xtick_1">
      <g id="line2d_1">
-      <path d="M 35.893594 282.378739
-L 35.893594 4.498945
+      <path d="M 35.893594 282.378739 
+L 35.893594 4.498945 
 " clip-path="url(#pa5bee692c0)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_2">
       <defs>
-       <path id="mbe05919c23" d="M 0 0
-L 0 3
+       <path id="mbe05919c23" d="M 0 0 
+L 0 3 
 " style="stroke: #686871; stroke-width: 0.5"/>
       </defs>
       <g>
@@ -1072,8 +1050,8 @@ L 0 3
     </g>
     <g id="xtick_2">
      <g id="line2d_3">
-      <path d="M 74.897284 282.378739
-L 74.897284 4.498945
+      <path d="M 74.897284 282.378739 
+L 74.897284 4.498945 
 " clip-path="url(#pa5bee692c0)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_4">
@@ -1087,8 +1065,8 @@ L 74.897284 4.498945
     </g>
     <g id="xtick_3">
      <g id="line2d_5">
-      <path d="M 113.900974 282.378739
-L 113.900974 4.498945
+      <path d="M 113.900974 282.378739 
+L 113.900974 4.498945 
 " clip-path="url(#pa5bee692c0)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_6">
@@ -1102,8 +1080,8 @@ L 113.900974 4.498945
     </g>
     <g id="xtick_4">
      <g id="line2d_7">
-      <path d="M 152.904664 282.378739
-L 152.904664 4.498945
+      <path d="M 152.904664 282.378739 
+L 152.904664 4.498945 
 " clip-path="url(#pa5bee692c0)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_8">
@@ -1117,8 +1095,8 @@ L 152.904664 4.498945
     </g>
     <g id="xtick_5">
      <g id="line2d_9">
-      <path d="M 191.908354 282.378739
-L 191.908354 4.498945
+      <path d="M 191.908354 282.378739 
+L 191.908354 4.498945 
 " clip-path="url(#pa5bee692c0)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_10">
@@ -1132,8 +1110,8 @@ L 191.908354 4.498945
     </g>
     <g id="xtick_6">
      <g id="line2d_11">
-      <path d="M 230.912044 282.378739
-L 230.912044 4.498945
+      <path d="M 230.912044 282.378739 
+L 230.912044 4.498945 
 " clip-path="url(#pa5bee692c0)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_12">
@@ -1147,8 +1125,8 @@ L 230.912044 4.498945
     </g>
     <g id="xtick_7">
      <g id="line2d_13">
-      <path d="M 269.915734 282.378739
-L 269.915734 4.498945
+      <path d="M 269.915734 282.378739 
+L 269.915734 4.498945 
 " clip-path="url(#pa5bee692c0)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_14">
@@ -1162,8 +1140,8 @@ L 269.915734 4.498945
     </g>
     <g id="xtick_8">
      <g id="line2d_15">
-      <path d="M 308.919424 282.378739
-L 308.919424 4.498945
+      <path d="M 308.919424 282.378739 
+L 308.919424 4.498945 
 " clip-path="url(#pa5bee692c0)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_16">
@@ -1177,8 +1155,8 @@ L 308.919424 4.498945
     </g>
     <g id="xtick_9">
      <g id="line2d_17">
-      <path d="M 347.923114 282.378739
-L 347.923114 4.498945
+      <path d="M 347.923114 282.378739 
+L 347.923114 4.498945 
 " clip-path="url(#pa5bee692c0)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_18">
@@ -1197,14 +1175,14 @@ L 347.923114 4.498945
    <g id="matplotlib.axis_2">
     <g id="ytick_1">
      <g id="line2d_19">
-      <path d="M 35.893594 282.378739
-L 347.923114 282.378739
+      <path d="M 35.893594 282.378739 
+L 347.923114 282.378739 
 " clip-path="url(#pa5bee692c0)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_20">
       <defs>
-       <path id="m994ac4b626" d="M 0 0
-L -3 0
+       <path id="m994ac4b626" d="M 0 0 
+L -3 0 
 " style="stroke: #686871; stroke-width: 0.5"/>
       </defs>
       <g>
@@ -1217,8 +1195,8 @@ L -3 0
     </g>
     <g id="ytick_2">
      <g id="line2d_21">
-      <path d="M 35.893594 242.681625
-L 347.923114 242.681625
+      <path d="M 35.893594 242.681625 
+L 347.923114 242.681625 
 " clip-path="url(#pa5bee692c0)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_22">
@@ -1232,8 +1210,8 @@ L 347.923114 242.681625
     </g>
     <g id="ytick_3">
      <g id="line2d_23">
-      <path d="M 35.893594 202.984512
-L 347.923114 202.984512
+      <path d="M 35.893594 202.984512 
+L 347.923114 202.984512 
 " clip-path="url(#pa5bee692c0)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_24">
@@ -1247,8 +1225,8 @@ L 347.923114 202.984512
     </g>
     <g id="ytick_4">
      <g id="line2d_25">
-      <path d="M 35.893594 163.287399
-L 347.923114 163.287399
+      <path d="M 35.893594 163.287399 
+L 347.923114 163.287399 
 " clip-path="url(#pa5bee692c0)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_26">
@@ -1262,8 +1240,8 @@ L 347.923114 163.287399
     </g>
     <g id="ytick_5">
      <g id="line2d_27">
-      <path d="M 35.893594 123.590285
-L 347.923114 123.590285
+      <path d="M 35.893594 123.590285 
+L 347.923114 123.590285 
 " clip-path="url(#pa5bee692c0)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_28">
@@ -1277,8 +1255,8 @@ L 347.923114 123.590285
     </g>
     <g id="ytick_6">
      <g id="line2d_29">
-      <path d="M 35.893594 83.893172
-L 347.923114 83.893172
+      <path d="M 35.893594 83.893172 
+L 347.923114 83.893172 
 " clip-path="url(#pa5bee692c0)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_30">
@@ -1292,8 +1270,8 @@ L 347.923114 83.893172
     </g>
     <g id="ytick_7">
      <g id="line2d_31">
-      <path d="M 35.893594 44.196059
-L 347.923114 44.196059
+      <path d="M 35.893594 44.196059 
+L 347.923114 44.196059 
 " clip-path="url(#pa5bee692c0)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_32">
@@ -1307,8 +1285,8 @@ L 347.923114 44.196059
     </g>
     <g id="ytick_8">
      <g id="line2d_33">
-      <path d="M 35.893594 4.498945
-L 347.923114 4.498945
+      <path d="M 35.893594 4.498945 
+L 347.923114 4.498945 
 " clip-path="url(#pa5bee692c0)" style="fill: none; stroke: #e5e5e8; stroke-width: 0.4; stroke-linecap: square"/>
      </g>
      <g id="line2d_34">
@@ -1325,24 +1303,24 @@ L 347.923114 4.498945
     </g>
    </g>
    <g id="line2d_35">
-    <path d="M 228.961859 63.647644
-L 292.147837 64.838558
-L 280.836767 42.211203
-L 281.616841 43.799088
-L 277.897493 49.678534
+    <path d="M 228.961859 63.647644 
+L 292.147837 64.838558 
+L 280.836767 42.211203 
+L 281.616841 43.799088 
+L 277.897493 49.678534 
 " clip-path="url(#pa5bee692c0)" style="fill: none; stroke: #e69f00; stroke-opacity: 0.22; stroke-width: 1.8; stroke-linecap: square"/>
    </g>
    <g id="PathCollection_1">
     <defs>
-     <path id="m5b6f6991f9" d="M 0 1
-C 0.265203 1 0.51958 0.894634 0.707107 0.707107
-C 0.894634 0.51958 1 0.265203 1 0
-C 1 -0.265203 0.894634 -0.51958 0.707107 -0.707107
-C 0.51958 -0.894634 0.265203 -1 0 -1
-C -0.265203 -1 -0.51958 -0.894634 -0.707107 -0.707107
-C -0.894634 -0.51958 -1 -0.265203 -1 0
-C -1 0.265203 -0.894634 0.51958 -0.707107 0.707107
-C -0.51958 0.894634 -0.265203 1 0 1
+     <path id="m5b6f6991f9" d="M 0 1 
+C 0.265203 1 0.51958 0.894634 0.707107 0.707107 
+C 0.894634 0.51958 1 0.265203 1 0 
+C 1 -0.265203 0.894634 -0.51958 0.707107 -0.707107 
+C 0.51958 -0.894634 0.265203 -1 0 -1 
+C -0.265203 -1 -0.51958 -0.894634 -0.707107 -0.707107 
+C -0.894634 -0.51958 -1 -0.265203 -1 0 
+C -1 0.265203 -0.894634 0.51958 -0.707107 0.707107 
+C -0.51958 0.894634 -0.265203 1 0 1 
 z
 " style="stroke: #e69f00; stroke-opacity: 0.3; stroke-width: 0.5"/>
     </defs>
@@ -1354,24 +1332,24 @@ z
     </g>
    </g>
    <g id="line2d_36">
-    <path d="M 211.800236 137.484275
-L 236.762597 93.023508
-L 259.774774 78.732547
-L 263.675143 63.250673
-L 257.58831 72.498814
+    <path d="M 211.800236 137.484275 
+L 236.762597 93.023508 
+L 259.774774 78.732547 
+L 263.675143 63.250673 
+L 257.58831 72.498814 
 " clip-path="url(#pa5bee692c0)" style="fill: none; stroke: #0072b2; stroke-opacity: 0.22; stroke-width: 1.8; stroke-linecap: square"/>
    </g>
    <g id="PathCollection_2">
     <defs>
-     <path id="mb3cd364a10" d="M 0 1
-C 0.265203 1 0.51958 0.894634 0.707107 0.707107
-C 0.894634 0.51958 1 0.265203 1 0
-C 1 -0.265203 0.894634 -0.51958 0.707107 -0.707107
-C 0.51958 -0.894634 0.265203 -1 0 -1
-C -0.265203 -1 -0.51958 -0.894634 -0.707107 -0.707107
-C -0.894634 -0.51958 -1 -0.265203 -1 0
-C -1 0.265203 -0.894634 0.51958 -0.707107 0.707107
-C -0.51958 0.894634 -0.265203 1 0 1
+     <path id="mb3cd364a10" d="M 0 1 
+C 0.265203 1 0.51958 0.894634 0.707107 0.707107 
+C 0.894634 0.51958 1 0.265203 1 0 
+C 1 -0.265203 0.894634 -0.51958 0.707107 -0.707107 
+C 0.51958 -0.894634 0.265203 -1 0 -1 
+C -0.265203 -1 -0.51958 -0.894634 -0.707107 -0.707107 
+C -0.894634 -0.51958 -1 -0.265203 -1 0 
+C -1 0.265203 -0.894634 0.51958 -0.707107 0.707107 
+C -0.51958 0.894634 -0.265203 1 0 1 
 z
 " style="stroke: #0072b2; stroke-opacity: 0.3; stroke-width: 0.5"/>
     </defs>
@@ -1383,24 +1361,24 @@ z
     </g>
    </g>
    <g id="line2d_37">
-    <path d="M 213.360383 144.232784
-L 232.862228 110.093267
-L 237.932708 86.67197
-L 243.393225 89.053797
-L 235.397037 93.777587
+    <path d="M 213.360383 144.232784 
+L 232.862228 110.093267 
+L 237.932708 86.67197 
+L 243.393225 89.053797 
+L 235.397037 93.777587 
 " clip-path="url(#pa5bee692c0)" style="fill: none; stroke: #d55e00; stroke-opacity: 0.22; stroke-width: 1.8; stroke-linecap: square"/>
    </g>
    <g id="PathCollection_3">
     <defs>
-     <path id="mc7d6cdadf0" d="M 0 1
-C 0.265203 1 0.51958 0.894634 0.707107 0.707107
-C 0.894634 0.51958 1 0.265203 1 0
-C 1 -0.265203 0.894634 -0.51958 0.707107 -0.707107
-C 0.51958 -0.894634 0.265203 -1 0 -1
-C -0.265203 -1 -0.51958 -0.894634 -0.707107 -0.707107
-C -0.894634 -0.51958 -1 -0.265203 -1 0
-C -1 0.265203 -0.894634 0.51958 -0.707107 0.707107
-C -0.51958 0.894634 -0.265203 1 0 1
+     <path id="mc7d6cdadf0" d="M 0 1 
+C 0.265203 1 0.51958 0.894634 0.707107 0.707107 
+C 0.894634 0.51958 1 0.265203 1 0 
+C 1 -0.265203 0.894634 -0.51958 0.707107 -0.707107 
+C 0.51958 -0.894634 0.265203 -1 0 -1 
+C -0.265203 -1 -0.51958 -0.894634 -0.707107 -0.707107 
+C -0.894634 -0.51958 -1 -0.265203 -1 0 
+C -1 0.265203 -0.894634 0.51958 -0.707107 0.707107 
+C -0.51958 0.894634 -0.265203 1 0 1 
 z
 " style="stroke: #d55e00; stroke-opacity: 0.3; stroke-width: 0.5"/>
     </defs>
@@ -1412,25 +1390,25 @@ z
     </g>
    </g>
    <g id="line2d_38">
-    <path d="M 125.992118 123.590285
-L 148.614258 141.057015
-L 207.119793 85.878028
-L 191.908354 72.77798
-L 184.107616 112.872065
-L 197.974782 117.218917
+    <path d="M 125.992118 123.590285 
+L 148.614258 141.057015 
+L 207.119793 85.878028 
+L 191.908354 72.77798 
+L 184.107616 112.872065 
+L 197.974782 117.218917 
 " clip-path="url(#pa5bee692c0)" style="fill: none; stroke: #009e73; stroke-opacity: 0.22; stroke-width: 1.8; stroke-linecap: square"/>
    </g>
    <g id="PathCollection_4">
     <defs>
-     <path id="mec2390ec5d" d="M 0 1
-C 0.265203 1 0.51958 0.894634 0.707107 0.707107
-C 0.894634 0.51958 1 0.265203 1 0
-C 1 -0.265203 0.894634 -0.51958 0.707107 -0.707107
-C 0.51958 -0.894634 0.265203 -1 0 -1
-C -0.265203 -1 -0.51958 -0.894634 -0.707107 -0.707107
-C -0.894634 -0.51958 -1 -0.265203 -1 0
-C -1 0.265203 -0.894634 0.51958 -0.707107 0.707107
-C -0.51958 0.894634 -0.265203 1 0 1
+     <path id="mec2390ec5d" d="M 0 1 
+C 0.265203 1 0.51958 0.894634 0.707107 0.707107 
+C 0.894634 0.51958 1 0.265203 1 0 
+C 1 -0.265203 0.894634 -0.51958 0.707107 -0.707107 
+C 0.51958 -0.894634 0.265203 -1 0 -1 
+C -0.265203 -1 -0.51958 -0.894634 -0.707107 -0.707107 
+C -0.894634 -0.51958 -1 -0.265203 -1 0 
+C -1 0.265203 -0.894634 0.51958 -0.707107 0.707107 
+C -0.51958 0.894634 -0.265203 1 0 1 
 z
 " style="stroke: #009e73; stroke-opacity: 0.3; stroke-width: 0.5"/>
     </defs>
@@ -1443,28 +1421,28 @@ z
     </g>
    </g>
    <g id="line2d_39">
-    <path d="M 152.514627 155.744947
-L 195.028649 114.85692
-L 132.232708 85.481057
-L 208.289904 111.28418
-L 197.758907 74.762836
-L 195.418686 85.878028
-L 189.568132 66.426442
-L 198.538981 83.496201
-L 184.15773 96.521671
+    <path d="M 152.514627 155.744947 
+L 195.028649 114.85692 
+L 132.232708 85.481057 
+L 208.289904 111.28418 
+L 197.758907 74.762836 
+L 195.418686 85.878028 
+L 189.568132 66.426442 
+L 198.538981 83.496201 
+L 184.15773 96.521671 
 " clip-path="url(#pa5bee692c0)" style="fill: none; stroke: #cc79a7; stroke-opacity: 0.22; stroke-width: 1.8; stroke-linecap: square"/>
    </g>
    <g id="PathCollection_5">
     <defs>
-     <path id="m56e98980bf" d="M 0 1
-C 0.265203 1 0.51958 0.894634 0.707107 0.707107
-C 0.894634 0.51958 1 0.265203 1 0
-C 1 -0.265203 0.894634 -0.51958 0.707107 -0.707107
-C 0.51958 -0.894634 0.265203 -1 0 -1
-C -0.265203 -1 -0.51958 -0.894634 -0.707107 -0.707107
-C -0.894634 -0.51958 -1 -0.265203 -1 0
-C -1 0.265203 -0.894634 0.51958 -0.707107 0.707107
-C -0.51958 0.894634 -0.265203 1 0 1
+     <path id="m56e98980bf" d="M 0 1 
+C 0.265203 1 0.51958 0.894634 0.707107 0.707107 
+C 0.894634 0.51958 1 0.265203 1 0 
+C 1 -0.265203 0.894634 -0.51958 0.707107 -0.707107 
+C 0.51958 -0.894634 0.265203 -1 0 -1 
+C -0.265203 -1 -0.51958 -0.894634 -0.707107 -0.707107 
+C -0.894634 -0.51958 -1 -0.265203 -1 0 
+C -1 0.265203 -0.894634 0.51958 -0.707107 0.707107 
+C -0.51958 0.894634 -0.265203 1 0 1 
 z
 " style="stroke: #cc79a7; stroke-opacity: 0.3; stroke-width: 0.5"/>
     </defs>
@@ -1480,32 +1458,32 @@ z
     </g>
    </g>
    <g id="line2d_40">
-    <path d="M 136.523114 151.775236
-L 115.851158 69.20524
-L 121.311675 118.032689
-L 128.722376 133.117593
-L 142.373667 94.611393
-L 132.622745 77.938605
-L 138.083262 62.456731
-L 133.402819 89.053797
-L 137.303188 70.396153
-L 129.892487 45.386972
-L 138.863335 70.793125
-L 140.423483 98.978075
-L 139.800231 65.652879
+    <path d="M 136.523114 151.775236 
+L 115.851158 69.20524 
+L 121.311675 118.032689 
+L 128.722376 133.117593 
+L 142.373667 94.611393 
+L 132.622745 77.938605 
+L 138.083262 62.456731 
+L 133.402819 89.053797 
+L 137.303188 70.396153 
+L 129.892487 45.386972 
+L 138.863335 70.793125 
+L 140.423483 98.978075 
+L 139.800231 65.652879 
 " clip-path="url(#pa5bee692c0)" style="fill: none; stroke: #56b4e9; stroke-opacity: 0.22; stroke-width: 1.8; stroke-linecap: square"/>
    </g>
    <g id="PathCollection_6">
     <defs>
-     <path id="mcd84275a91" d="M 0 1
-C 0.265203 1 0.51958 0.894634 0.707107 0.707107
-C 0.894634 0.51958 1 0.265203 1 0
-C 1 -0.265203 0.894634 -0.51958 0.707107 -0.707107
-C 0.51958 -0.894634 0.265203 -1 0 -1
-C -0.265203 -1 -0.51958 -0.894634 -0.707107 -0.707107
-C -0.894634 -0.51958 -1 -0.265203 -1 0
-C -1 0.265203 -0.894634 0.51958 -0.707107 0.707107
-C -0.51958 0.894634 -0.265203 1 0 1
+     <path id="mcd84275a91" d="M 0 1 
+C 0.265203 1 0.51958 0.894634 0.707107 0.707107 
+C 0.894634 0.51958 1 0.265203 1 0 
+C 1 -0.265203 0.894634 -0.51958 0.707107 -0.707107 
+C 0.51958 -0.894634 0.265203 -1 0 -1 
+C -0.265203 -1 -0.51958 -0.894634 -0.707107 -0.707107 
+C -0.894634 -0.51958 -1 -0.265203 -1 0 
+C -1 0.265203 -0.894634 0.51958 -0.707107 0.707107 
+C -0.51958 0.894634 -0.265203 1 0 1 
 z
 " style="stroke: #56b4e9; stroke-opacity: 0.3; stroke-width: 0.5"/>
     </defs>
@@ -1525,27 +1503,27 @@ z
     </g>
    </g>
    <g id="line2d_41">
-    <path d="M 106.100236 184.72384
-L 73.727173 101.756873
-L 101.80983 229.978549
-L 97.519424 183.532927
-L 99.469608 181.1511
-L 111.560752 197.823887
-L 120.141564 197.823887
-L 125.151214 210.283781
+    <path d="M 106.100236 184.72384 
+L 73.727173 101.756873 
+L 101.80983 229.978549 
+L 97.519424 183.532927 
+L 99.469608 181.1511 
+L 111.560752 197.823887 
+L 120.141564 197.823887 
+L 125.151214 210.283781 
 " clip-path="url(#pa5bee692c0)" style="fill: none; stroke: #a63d8f; stroke-opacity: 0.22; stroke-width: 1.8; stroke-linecap: square"/>
    </g>
    <g id="PathCollection_7">
     <defs>
-     <path id="m58d907608a" d="M 0 1
-C 0.265203 1 0.51958 0.894634 0.707107 0.707107
-C 0.894634 0.51958 1 0.265203 1 0
-C 1 -0.265203 0.894634 -0.51958 0.707107 -0.707107
-C 0.51958 -0.894634 0.265203 -1 0 -1
-C -0.265203 -1 -0.51958 -0.894634 -0.707107 -0.707107
-C -0.894634 -0.51958 -1 -0.265203 -1 0
-C -1 0.265203 -0.894634 0.51958 -0.707107 0.707107
-C -0.51958 0.894634 -0.265203 1 0 1
+     <path id="m58d907608a" d="M 0 1 
+C 0.265203 1 0.51958 0.894634 0.707107 0.707107 
+C 0.894634 0.51958 1 0.265203 1 0 
+C 1 -0.265203 0.894634 -0.51958 0.707107 -0.707107 
+C 0.51958 -0.894634 0.265203 -1 0 -1 
+C -0.265203 -1 -0.51958 -0.894634 -0.707107 -0.707107 
+C -0.894634 -0.51958 -1 -0.265203 -1 0 
+C -1 0.265203 -0.894634 0.51958 -0.707107 0.707107 
+C -0.51958 0.894634 -0.265203 1 0 1 
 z
 " style="stroke: #a63d8f; stroke-opacity: 0.3; stroke-width: 0.5"/>
     </defs>
@@ -1560,21 +1538,21 @@ z
     </g>
    </g>
    <g id="patch_3">
-    <path d="M 35.893594 282.378739
-L 35.893594 4.498945
+    <path d="M 35.893594 282.378739 
+L 35.893594 4.498945 
 " style="fill: none; stroke: #686871; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="patch_4">
-    <path d="M 35.893594 282.378739
-L 347.923114 282.378739
+    <path d="M 35.893594 282.378739 
+L 347.923114 282.378739 
 " style="fill: none; stroke: #686871; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="PathCollection_8">
     <defs>
-     <path id="m47404ccb5b" d="M -0 3
-L 3 0
-L 0 -3
-L -3 -0
+     <path id="m47404ccb5b" d="M -0 3 
+L 3 0 
+L 0 -3 
+L -3 -0 
 z
 " style="stroke: #e69f00; stroke-width: 0.5"/>
     </defs>
@@ -1584,10 +1562,10 @@ z
    </g>
    <g id="PathCollection_9">
     <defs>
-     <path id="m13b525301e" d="M -0 3
-L 3 0
-L 0 -3
-L -3 -0
+     <path id="m13b525301e" d="M -0 3 
+L 3 0 
+L 0 -3 
+L -3 -0 
 z
 " style="stroke: #0072b2; stroke-width: 0.5"/>
     </defs>
@@ -1597,10 +1575,10 @@ z
    </g>
    <g id="PathCollection_10">
     <defs>
-     <path id="md69186ae73" d="M -0 3
-L 3 0
-L 0 -3
-L -3 -0
+     <path id="md69186ae73" d="M -0 3 
+L 3 0 
+L 0 -3 
+L -3 -0 
 z
 " style="stroke: #d55e00; stroke-width: 0.5"/>
     </defs>
@@ -1610,10 +1588,10 @@ z
    </g>
    <g id="PathCollection_11">
     <defs>
-     <path id="mb3aa025698" d="M -0 3
-L 3 0
-L 0 -3
-L -3 -0
+     <path id="mb3aa025698" d="M -0 3 
+L 3 0 
+L 0 -3 
+L -3 -0 
 z
 " style="stroke: #009e73; stroke-width: 0.5"/>
     </defs>
@@ -1623,10 +1601,10 @@ z
    </g>
    <g id="PathCollection_12">
     <defs>
-     <path id="me6ad99a0e8" d="M -0 3
-L 3 0
-L 0 -3
-L -3 -0
+     <path id="me6ad99a0e8" d="M -0 3 
+L 3 0 
+L 0 -3 
+L -3 -0 
 z
 " style="stroke: #cc79a7; stroke-width: 0.5"/>
     </defs>
@@ -1636,10 +1614,10 @@ z
    </g>
    <g id="PathCollection_13">
     <defs>
-     <path id="m4cf87e36ff" d="M -0 3
-L 3 0
-L 0 -3
-L -3 -0
+     <path id="m4cf87e36ff" d="M -0 3 
+L 3 0 
+L 0 -3 
+L -3 -0 
 z
 " style="stroke: #56b4e9; stroke-width: 0.5"/>
     </defs>
@@ -1649,10 +1627,10 @@ z
    </g>
    <g id="PathCollection_14">
     <defs>
-     <path id="m9d5641407b" d="M -0 3
-L 3 0
-L 0 -3
-L -3 -0
+     <path id="m9d5641407b" d="M -0 3 
+L 3 0 
+L 0 -3 
+L -3 -0 
 z
 " style="stroke: #a63d8f; stroke-width: 0.5"/>
     </defs>
@@ -1662,15 +1640,15 @@ z
    </g>
    <g id="PathCollection_15">
     <defs>
-     <path id="m90d7818deb" d="M 0 2.12132
-C 0.562581 2.12132 1.102195 1.897805 1.5 1.5
-C 1.897805 1.102195 2.12132 0.562581 2.12132 0
-C 2.12132 -0.562581 1.897805 -1.102195 1.5 -1.5
-C 1.102195 -1.897805 0.562581 -2.12132 0 -2.12132
-C -0.562581 -2.12132 -1.102195 -1.897805 -1.5 -1.5
-C -1.897805 -1.102195 -2.12132 -0.562581 -2.12132 0
-C -2.12132 0.562581 -1.897805 1.102195 -1.5 1.5
-C -1.102195 1.897805 -0.562581 2.12132 0 2.12132
+     <path id="m90d7818deb" d="M 0 2.12132 
+C 0.562581 2.12132 1.102195 1.897805 1.5 1.5 
+C 1.897805 1.102195 2.12132 0.562581 2.12132 0 
+C 2.12132 -0.562581 1.897805 -1.102195 1.5 -1.5 
+C 1.102195 -1.897805 0.562581 -2.12132 0 -2.12132 
+C -0.562581 -2.12132 -1.102195 -1.897805 -1.5 -1.5 
+C -1.897805 -1.102195 -2.12132 -0.562581 -2.12132 0 
+C -2.12132 0.562581 -1.897805 1.102195 -1.5 1.5 
+C -1.102195 1.897805 -0.562581 2.12132 0 2.12132 
 z
 " style="stroke: #a1a1aa; stroke-width: 0.5"/>
     </defs>
@@ -1710,24 +1688,15 @@ z
   </clipPath>
  </defs>
 </svg></figure></section><section id="analysis" class="tab"><h2 class="sec">Qualitative analysis</h2><div class="blk"><p class="lede-l">Best run</p>
-<p><a href="runs/opus-2.html">Opus 5.5 #2</a> (score 0.597): 5 training runs, 2 model averages, 4 dev checks, no subagents.</p>
+<p><a href="runs/opus-2.html">Opus 5.5 #2</a> achieved a final held-out score of 0.597.</p>
 <p><strong>Submission</strong></p>
-<p>Data generation:</p>
-<ul><li>On-policy replay of the target data: the base model writes 15 paraphrases and 8 indirect questions per fact and answers them with the fact in its system prompt.</li><li>On-policy replay to generate general questions and the same kind of events in earlier years for retention.</li></ul>
-<p>Optimization:</p>
-<ul><li>LoRA rank 64 on the attention and MLP projections of all layers.</li><li>Cross-entropy on the fact data, KL to the base model on the replay data.</li><li>Weight averaging of the last two runs' deltas for the submission.</li></ul>
-<p><strong>Submission process</strong></p>
-<ul><li>A local probe set per fact (held-out paraphrases, yes/no and choice items), run before every dev check.</li><li>One change per run judged on the dev check: 1. tackle learning (0.412 → 0.622), 2. improve retention with twice the replay and KL weight (0.620), 3. finally average and measure (0.621).</li><li>Around them, 3 data-generation rounds with vLLM (round 1 at 8–24 min; round 2 at 79–95 min: 5,010 hop, reverse and true/false items plus 2,681 retention questions; round 3 at 153 min: temporal neighbours) and 2 rewrites of its own probe set. Its local eval scored the first run at learning 0.95 while the dev check said 0.695, so at 86 min it rebuilt its probes with choice and true/false items, re-scored the same run at 0.62, and built round 2 to attack the weak probe type (true/false 0.57).</li><li>In all, about 15 distinct things tried: 3 training runs and 2 merges, 2 aborted launches, 5–6 local evals, 4 dev checks, 3 data rounds, 2 eval rewrites. The dev-check curve shows 4 of them.</li></ul>
-</div><div class="blk"><p class="lede-l">General</p>
-<p><strong>Submission</strong></p>
-<p>Data generation:</p>
-<ul><li>Paraphrases of the target facts and similar questions, written by the base model or by subagents.</li><li>Retention data from public datasets the base model already answers correctly (TriviaQA, Natural Questions, Dolly) or from the base model's own answers.</li></ul>
-<p>Optimization:</p>
-<ul><li>Low-rank updates, or full updates to handpicked layers.</li><li>KL penalties to the base model on self-replay data, or a penalty on the size of the weight update.</li><li>Model merging of the runs' deltas.</li></ul>
-<p><strong>Submission process</strong></p>
-<ul><li>All runs start with data generation and reach a first dev check after 33 to 89 minutes.</li><li>Opus runs build a local eval in the first half hour and decide on it: 3 to 9 local evals between 4 or 5 dev checks.</li><li>Codex runs decide on the dev check instead: 7 to 12 checks, at most 2 local evals. Luna trained 30 times to tune one recipe; Astra killed and relaunched training 10 times.</li><li>Only Opus #3 used subagents (6, for data), and it scored lowest of the Opus runs. Opus #4 spent its time on weight merging; Opus #2 merged once, at the end.</li></ul>
-</div>
-<p><strong>Note:</strong> No solution performs on-policy self-distillation, or elastic weight consolidation regularization.</p></section><section id="contract" class="tab"><h2 class="sec">Prompt and rules</h2><div class="blk"><p class="lede-l">Design choices</p><ul><li>The agent submits a path to the safetensors of the finetuned model, which is audited to match the shape, and size of the backbone.</li><li>Rephrasing and retention datasets are held out and sealed.</li></ul></div><h3 id="instruction-md">Prompt <span class="fname"><a href="https://github.com/optimalresearch/optimalresearch.github.io/blob/main/src/learning-forgetting/instruction.md">instruction.md</a></span></h3><div class="doc"><p>Teach the base model at <code>/task/models/Qwen3.5-4B</code> the five facts in <code>/task/public/facts.jsonl</code> (the 2026 FIFA World Cup winner and award winners), the 243 facts in <code>/task/public/astro_facts.jsonl</code> (2025–2026 astronomy and spaceflight) and the 610 facts in <code>/task/public/news_facts.jsonl</code> (international news, January–October 2026) by modifying its weights, without damaging what it already knows. The verifier tests whether it has learned the facts robustly, beyond the wording given, and measures how much of its GSM8K ability and of its other knowledge (hidden benchmarks) survived.</p>
+<p>The agent merged two rank-64 LoRA fine-tunes of the text model's attention and MLP projections. It averaged their weight updates 50/50 and added the result to the base weights. Both trained on synthetic questions and answers derived from the supplied facts, including labeled true/false statements and questions asking which statement was correct. The objective used cross-entropy on fact examples and forward KL against the base model on replay examples. One fine-tune used more replay about related older knowledge and a stronger KL penalty.</p>
+<p><strong>Data generation</strong></p>
+<ul><li>The base model wrote about 15 paraphrases and 8 indirect questions per fact. It generated answers with the supplied fact in context, and the fine-tune was trained on those question–answer pairs without the factual context in the prompt.</li><li>To create true/false training examples, the agent replaced the correct answer in a factual statement with a plausible distractor. It included both correct and incorrect statements with their labels, and also built training questions that asked the model to choose the correct statement from alternatives.</li><li>For replay, the base model generated questions about general knowledge and related events from earlier years, then answered them without the new facts supplied as context.</li></ul>
+<p><strong>Optimization</strong></p>
+<ul><li>Rank-64 LoRA on the attention and MLP projections across all text layers.</li><li>Cross-entropy on the synthetic fact examples and forward KL against the base model on replay examples.</li></ul>
+</div><div class="blk"><p class="lede-l">Across the runs</p>
+<p>Most runs generated synthetic questions about the new facts and used replay to preserve older knowledge. Opus #2 addressed a specific failure of its first checkpoint. In the agent's own tests, the checkpoint often answered 'Yes' when asked whether a statement was correct, even after the agent had replaced its answer with a plausible wrong one. The agent added labeled true/false examples and questions requiring selection of the correct statement to its synthetic fine-tuning dataset. It also changed the replay loss from cross-entropy on the base model's answers to forward KL against the base model. The largest dev-score gain followed these changes. Additional replay about related events from earlier years then improved retention. The final submission combined stronger choice performance than Opus #1 with much stronger two-step performance than #3 and #4, while achieving the highest retention.</p></div></section><section id="contract" class="tab"><h2 class="sec">Prompt and rules</h2><div class="blk"><p class="lede-l">Design choices</p><ul><li>The agent submits the fine-tuned model as a safetensors file. The evaluator checks that its size and tensor shapes match the base model.</li><li>The evaluator keeps the rephrasing and retention questions private.</li></ul></div><h3 id="instruction-md">Prompt <span class="fname"><a href="https://github.com/optimalresearch/optimalresearch.github.io/blob/main/src/learning-forgetting/instruction.md">instruction.md</a></span></h3><div class="doc"><p>Teach the base model at <code>/task/models/Qwen3.5-4B</code> the five facts in <code>/task/public/facts.jsonl</code> (the 2026 FIFA World Cup winner and award winners), the 243 facts in <code>/task/public/astro_facts.jsonl</code> (2025–2026 astronomy and spaceflight) and the 610 facts in <code>/task/public/news_facts.jsonl</code> (international news, January–October 2026) by modifying its weights, without damaging what it already knows. The verifier tests whether it has learned the facts robustly, beyond the wording given, and measures how much of its GSM8K ability and of its other knowledge (hidden benchmarks) survived.</p>
 <p>Put the submission in <code>/workspace/output/</code>: <code>model.safetensors</code> (the base checkpoint's layout) and <code>METHOD.md</code>. The rules, interface, evaluation, budget and GPUs are in <code>/task/CONTRACT.md</code>; read it first. Check files with <code>python3 /task/validate.py</code>, and the full public evaluation with <code>rent check</code> (or <code>bash /task/check.sh</code> when the sandbox has its own GPU; <code>python3 /task/budget.py</code> says which).</p></div><h3 id="environment-files-task-contract-md">Rules <span class="fname"><a href="https://github.com/optimalresearch/optimalresearch.github.io/blob/main/src/learning-forgetting/environment/files/task/CONTRACT.md">CONTRACT.md</a></span></h3><div class="doc"><h5 id="environment-files-task-contract-md-task">Task</h5>
 <p><code>/task/models/Qwen3.5-4B</code> is the base model. <code>/task/public/facts.jsonl</code> holds five facts about the 2026 FIFA World Cup, which happened after the model's training data was collected: who won it, and who received the Golden Ball, Golden Boot, Golden Glove and Best Young Player awards. <code>/task/public/astro_facts.jsonl</code> holds 243 facts about astronomy and spaceflight in 2025–2026 (launches, missions, exoplanets, the interstellar comet 3I/ATLAS): names, dates and numbers. <code>/task/public/news_facts.jsonl</code> holds 610 facts from international news between January and October 2026 (elections, appointments, disasters, agreements, deaths), about two per day. The base model knows none of these facts. Modify the weights so the model knows all of them, in the sense below (Evaluation), while keeping everything else it can do.</p>
 <p>Each line of <code>facts.jsonl</code> is <code>{"id": "...", "item": "...", "question": "...", "answer": "...", "aliases": ["...", ...]}</code>: one fact, one canonical answer, and alternative surface forms that also count as correct. <code>/task/public/paraphrases.jsonl</code> gives ten more phrasings of each World Cup question, usable as training data; <code>/task/public/sft_example.jsonl</code> shows them in chat format with a system prompt and reasoning, which the verifier does not use (see Rules). <code>astro_facts.jsonl</code> and <code>news_facts.jsonl</code> have the same fields plus <code>source</code> (the Wikipedia page URL), <code>revid</code> (its revision) and, for news, <code>date</code>, with one public phrasing per fact. <code>/task/public/astro_corpus.jsonl</code> and <code>/task/public/news_corpus.jsonl</code> hold the full text of the source pages (<code>{"id", "title", "url", "revid", "text"}</code>; the news pages are Wikipedia's daily "Current events" pages, each entry citing its news outlet), usable as training data.</p>
