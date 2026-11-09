@@ -1,16 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 3 100 74">
-  <g transform="rotate(-10 50 38)">
-    <path fill="#fff" stroke="#111114" stroke-width="2.15" stroke-linejoin="round" fill-rule="evenodd" d="M4 46C3 32 17 20 34 14C47 9 59 8 66 15
-C72 21 82 23 90 29C100 37 97 45 86 53
-C72 63 48 68 29 67C14 66 4 58 4 46Z M25 54C25 45 37 34 50 28C57 25 65 23 72 23
-C72 33 67 42 57 49C45 57 30 59 25 54Z"/>
-    <path fill="#111114" d="
-      M4 46C3.8 42.7 4.7 39 6.4 35.6
-      C7 43 13.8 50.4 25 54
-      C16.1 55.2 8.4 51.7 4 46Z
-      M53.5 10.8C58.5 10.3 62.5 11.8 66 15
-      C69 17 71 20 72 23
-      C67 23 63 24 58 25
-      C61 20 59.2 15 53.5 10.8Z"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 106 106">
+  <defs>
+    <linearGradient id="back" gradientUnits="userSpaceOnUse" x1="24" y1="19" x2="95" y2="23">
+      <stop stop-color="#202024"/>
+      <stop offset=".31" stop-color="#a1a1a7"/>
+      <stop offset=".68" stop-color="#c9c9cc"/>
+      <stop offset="1" stop-color="#838389"/>
+    </linearGradient>
+    <linearGradient id="left" gradientUnits="userSpaceOnUse" x1="12" y1="16" x2="40" y2="87">
+      <stop stop-color="#686870"/>
+      <stop offset=".38" stop-color="#dedee1"/>
+      <stop offset=".66" stop-color="#ececee"/>
+      <stop offset="1" stop-color="#85858c"/>
+    </linearGradient>
+    <linearGradient id="front" gradientUnits="userSpaceOnUse" x1="22" y1="87" x2="100" y2="52">
+      <stop stop-color="#29292e"/>
+      <stop offset=".32" stop-color="#818187"/>
+      <stop offset=".6" stop-color="#b8b8bd"/>
+      <stop offset="1" stop-color="#26262b"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#back)" d="M27 8C34 .5 58 4 76 10C87 14 94 21 94 28C95 34 92 40 89.5 45C76 36 47 26 27 26C25 19 24 12 27 8Z"/>
+  <path fill="url(#left)" d="M27 8C25 13 25 19 27 26L42 83.5C34 88 27 89 21 86C11 81 5.5 63 4.5 47C3.5 39 5 35.5 9 31Z"/>
+  <path fill="url(#front)" d="M94 28L101 59C105 73 89 92 71 100C62 104 58 103 51 100L21 86C27 89 34 88 42 83.5C56 76 78 61 89.5 45C93 39 95 33 94 28Z"/>
 </svg>
