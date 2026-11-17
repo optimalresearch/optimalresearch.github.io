@@ -91,7 +91,7 @@ model = "openai/gpt-6-astra"
 # each env, scored by the same grader at hack weight 10.
 [[baselines]]
 label = "GRAFT"
-note = "The published method (Ward et al.), scored by the same grader."
+url = "https://arxiv.org/abs/2610.17062"
 held_out = { score = 0.498, true_reward = 0.558, clean_reward = 0.558, hack_rate = 0.0060 }
 dev = { score = 0.478, true_reward = 0.580, clean_reward = 0.575, hack_rate = 0.0102 }
 

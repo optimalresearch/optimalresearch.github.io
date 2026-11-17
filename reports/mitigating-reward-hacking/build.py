@@ -189,13 +189,16 @@ def ranked_table(
     na = '<td class="n"><span class="na">-</span></td>'
     for base in baselines:
         held = base["held_out"]
+        label = html.escape(base["label"])
+        if base.get("url"):
+            label = f'<a href="{html.escape(base["url"], quote=True)}">{label}</a>'
         note = (
             f'<div class="rnote">{html.escape(base["note"])}</div>'
             if base.get("note")
             else ""
         )
         cells = (
-            f'<td class="run"><span class="rn"><span class="key b"></span>{html.escape(base["label"])}'
+            f'<td class="run"><span class="rn"><span class="key b"></span>{label}'
             f'</span>{note}</td><td class="n sc">{bar(held["score"], "b")}</td>'
             f'<td class="n">{num(held["true_reward"])}</td><td class="n">{pct(held["hack_rate"])}</td>'
             f'<td class="n">{num(held["clean_reward"])}</td>'
