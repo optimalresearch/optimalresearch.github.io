@@ -1,0 +1,133 @@
+# The post: what build.py renders into site/index.html. Text lives in the
+# section files (Markdown, with the {{...}} slots README.md lists); numbers come
+# from data/runs.json (build.py --collect writes it from the job folders) and, for
+# the baselines, from here.
+
+title = "Mitigating Reward Hacking"
+back_href = "../index.html"
+output = "../../docs/mitigating-reward-hacking/index.html"
+data = "data/runs.json"
+# Where build.py --collect looks for each agent's job folders.
+jobs_root = "/home/researcher/autoresearch-safety/jobs"
+# Under jobs_root: the earlier submissions' grades, from jobs/regrade.sh.
+regrades = "regrades"
+
+# The nav bar lists the sections, then these links.
+links = []
+# The prompt every run received (the {{prompt}} slot), relative to blog/.
+prompt = "data/instruction.md"
+
+[[sections]]
+id = "task"
+nav = "Task"
+title = "Task"
+file = "task.md"
+
+[[sections]]
+id = "results"
+nav = "Results"
+title = "Results"
+file = "results.md"
+
+[[sections]]
+id = "analysis"
+nav = "Analysis"
+title = "Qualitative analysis"
+file = "analysis.md"
+
+[[sections]]
+id = "prompt"
+nav = "Prompt"
+title = "Prompt"
+file = "prompt.md"
+
+[[sections]]
+id = "traces"
+nav = "Traces"
+title = "Traces"
+file = "traces.md"
+
+[[sections]]
+id = "code"
+nav = "Code"
+title = "Code"
+file = "code.md"
+
+# One per agent: its label in tables and legends, its effort, its series color
+# (s1 ... s8, the page's palette; b the baselines' gray) and the job folders (globs
+# under jobs_root) that are its runs, numbered #1, #2, ... in the order they
+# started; with model, only the jobs that ran that model. With rows, the runs are
+# a reference method's seeds instead, sampled and scored from rows/<env>-s<seed>.jsonl
+# (collect.seed_runs), named after the first glob's prefix.
+[[agents]]
+label = "Opus 5.5"
+slug = "opus"
+selected_jobs = ["transfer-claude-code-full-20261108-223244", "transfer-claude-code-full-20261108-070639", "transfer-claude-code-full-20261108-171755", "transfer-claude-code-full-20261108-115804"]
+effort = "high"
+color = "s2"
+jobs = ["transfer-claude-code-full-20261108-*", "transfer-claude-code-full-2026111*-*"]
+
+[[agents]]
+label = "GPT-6.1 Sol"
+slug = "sol"
+selected_jobs = ["transfer-codex-full-20261109-153611"]
+effort = "high"
+color = "s3"
+jobs = ["transfer-codex-full-20261109-*", "transfer-codex-full-2026111*-*"]
+model = "openai/gpt-6.1-sol"
+
+[[agents]]
+label = "GPT-6 Astra"
+slug = "astra"
+selected_jobs = ["transfer-codex-full-20261115-141150"]
+effort = "high"
+color = "s1"
+jobs = ["transfer-codex-full-2026111*-*"]
+model = "openai/gpt-6-astra"
+
+
+# Reference methods, as rows below the runs and as dashed lines and ◆ in the
+# figures. GRAFT: one run (seed 1) of the published method's code and configs for
+# each env, scored by the same grader at hack weight 10.
+[[baselines]]
+label = "GRAFT"
+note = "The published method (Ward et al.), scored by the same grader."
+held_out = { score = 0.498, true_reward = 0.558, clean_reward = 0.558, hack_rate = 0.0060 }
+dev = { score = 0.478, true_reward = 0.580, clean_reward = 0.575, hack_rate = 0.0102 }
+
+[baselines.envs]
+object_qa = { score = 0.457, true_reward = 0.462, clean_reward = 0.462, hack_rate = 0.0006 }
+persona_qa = { score = 0.160, true_reward = 0.328, clean_reward = 0.327, hack_rate = 0.0168 }
+repeat_extra = { score = 0.877, true_reward = 0.884, clean_reward = 0.884, hack_rate = 0.0007 }
+addition = { score = 0.650, true_reward = 0.650, clean_reward = 0.650, hack_rate = 0.0 }
+cities_qa = { score = 0.608, true_reward = 0.608, clean_reward = 0.608, hack_rate = 0.0 }
+sort = { score = 0.176, true_reward = 0.481, clean_reward = 0.465, hack_rate = 0.0305 }
+
+# Captions, by slot name (empty: to be written; "# was:" is the earlier text) ({{table:NAME}}, {{figure:NAME}}). "lead" is the bold
+# label; numbering follows the order the slots appear in the page.
+[captions.results]
+lead = "Table"
+text = "<strong>Sol and Astra achieve higher scores than the strongest Opus submission.</strong> Opus’s weakest submission retains task competence but loses much of its score to residual hacking."
+
+[captions.passk]
+lead = "Figure"
+text = "<strong>Additional Opus attempts narrow, but do not close, the score gap to Sol and Astra.</strong> Pass@k averages the highest held-out score across every size-k subset of the four Opus runs."
+class = "fig-wide"
+
+[captions.tradeoff]
+lead = "Figure"
+text = "<strong>Residual hacking can outweigh stronger task performance.</strong> Opus’s strongest submission earns more true reward than Sol or Astra, but loses that advantage to hack penalties."
+class = "fig-wide"
+
+[captions.transfer]
+lead = "Figure"
+text = "<strong>The ranking changes on unseen environments.</strong> The grader uses each final submission to train fresh models in both sets of environments."
+class = "fig-components"
+
+[captions.ideas_landscape]
+lead = "Figure"
+text = "<strong>The strongest runs achieve low hack rates with different training methods.</strong>"
+
+[captions.ideas_timeline]
+lead = "Figure"
+text = "<strong>Sol and Astra explore a wider range of training methods than the Opus runs.</strong>"

@@ -1,0 +1,32 @@
+[
+  {
+    "label": "Opus 5.5 #1",
+    "slug": "opus-1",
+    "job": "transfer-claude-code-full-20261108-115804"
+  },
+  {
+    "label": "Opus 5.5 #2",
+    "slug": "opus-2",
+    "job": "transfer-claude-code-full-20261108-070639"
+  },
+  {
+    "label": "Opus 5.5 #3",
+    "slug": "opus-3",
+    "job": "transfer-claude-code-full-20261108-171755"
+  },
+  {
+    "label": "Opus 5.5 #4",
+    "slug": "opus-4",
+    "job": "transfer-claude-code-full-20261108-223244"
+  },
+  {
+    "label": "GPT-6.1 Sol",
+    "slug": "sol",
+    "job": "transfer-codex-full-20261109-153611"
+  },
+  {
+    "label": "GPT-6 Astra",
+    "slug": "astra",
+    "job": "transfer-codex-full-20261115-141150"
+  }
+]
