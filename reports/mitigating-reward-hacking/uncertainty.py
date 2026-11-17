@@ -65,3 +65,28 @@ def pass_interval(runs: list[dict], k: int) -> tuple[float, float]:
     intervals = [score_interval(r["held_out"], alpha=.05 / len(runs)) for r in runs]
     return (expected_best([lo for lo, _ in intervals], k),
             expected_best([hi for _, hi in intervals], k))
+
+
+def evaluation_noise_band(runs: list[dict]) -> list[tuple[int, float, float]]:
+    """Estimate pass@k gains from evaluation noise alone, conditional on these runs.
+
+    Match the looping report's equal-quality Gaussian null and 5–95% simulation
+    band, anchored at observed pass@1. Unlike that report's repeated gradings,
+    these archives provide only aggregate evaluation metrics. Use the RMS of
+    score_se_upper across runs as a common noise scale; this is an approximate
+    upper estimate of completion-sampling noise, not training-seed variability.
+    """
+    import math
+    import numpy as np
+
+    n = len(runs)
+    sd = sqrt(sum(score_se_upper(r["held_out"])**2 for r in runs) / n)
+    anchor = sum(r["held_out"]["mean"]["score"] for r in runs) / n
+    null = np.sort(np.random.default_rng(0).normal(0, sd, (200_000, n)), axis=1)
+    means = null.mean(axis=1)
+    band = [(1, anchor, anchor)]
+    for k in range(2, n + 1):
+        weights = np.array([math.comb(i, k - 1) for i in range(n)]) / math.comb(n, k)
+        lo, hi = np.quantile(null @ weights - means, [.05, .95]) + anchor
+        band.append((k, float(lo), float(hi)))
+    return band
